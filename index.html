@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tatiana Capo-Chichi — Consultante QHSE & Capital Humain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Parisienne&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17202A;
+    --paper:#EDE7D9;
+    --paper-2:#E4DCC8;
+    --teal:#2B4142;
+    --clay:#9C3B2E;
+    --brass:#A9812C;
+    --text:#22201B;
+    --text-soft:#544F42;
+    --line:rgba(34,32,27,0.16);
+    --line-dark:rgba(237,231,217,0.22);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;}
+  body{
+    margin:0;
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(rgba(34,32,27,0.05) 0.6px, transparent 0.6px);
+    background-size:14px 14px;
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .topbar{height:4px;display:flex;}
+  .topbar span{flex:1;}
+  .topbar span:nth-child(1){background:var(--teal);}
+  .topbar span:nth-child(2){background:var(--clay);}
+  .topbar span:nth-child(3){background:var(--brass);}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(237,231,217,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1120px;margin:0 auto;
+  }
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Parisienne',cursive;font-size:1.6rem;font-weight:400;letter-spacing:0.01em;text-decoration:none;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;
+    border:1px solid var(--brass);flex-shrink:0;
+  }
+  .brand span{color:var(--clay);}
+  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+  nav li{margin-left:28px;}
+  nav li:first-child{margin-left:0;}
+  nav a{text-decoration:none;font-size:0.88rem;color:var(--text-soft);transition:color .2s;position:relative;padding-bottom:3px;}
+  nav a::after{
+    content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--clay);
+    transition:right .25s ease;
+  }
+  nav a:hover::after{right:0;}
+  nav a:hover{color:var(--clay);}
+
+  .nav-toggle{
+    display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;
+  }
+  .nav-toggle span{width:22px;height:2px;background:var(--text);display:block;transition:transform .25s ease,opacity .25s ease;}
+  .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.is-open span:nth-child(2){opacity:0;}
+  .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media(max-width:800px){
+    .nav-toggle{display:flex;}
+    nav ul{
+      display:flex;flex-direction:column;gap:0;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    nav.is-open ul{max-height:360px;}
+    nav li{margin-left:0;}
+    nav li a{display:block;padding:14px 32px;border-top:1px solid var(--line);}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:72px 0 56px;
+    position:relative;overflow:hidden;
+  }
+  .hero::before,.hero::after{
+    content:'';position:absolute;border-radius:50%;filter:blur(70px);opacity:0.22;z-index:0;pointer-events:none;
+  }
+  .hero::before{width:360px;height:360px;background:var(--teal);top:-140px;left:-100px;animation:drift1 17s ease-in-out infinite;}
+  .hero::after{width:280px;height:280px;background:var(--clay);bottom:-110px;right:-70px;animation:drift2 19s ease-in-out infinite;}
+  @keyframes drift1{0%,100%{transform:translate(0,0);}50%{transform:translate(36px,26px);}}
+  @keyframes drift2{0%,100%{transform:translate(0,0);}50%{transform:translate(-28px,-34px);}}
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;
+    position:relative;z-index:1;
+  }
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px;}}
+
+  .hero-kicker{
+    display:flex;align-items:center;gap:10px;
+    font-size:0.78rem;color:var(--teal);font-weight:600;
+    letter-spacing:0.06em;text-transform:uppercase;margin-bottom:22px;
+  }
+  .hero-kicker::before{content:'';width:30px;height:1px;background:var(--clay);}
+  .hero h1{
+    font-size:clamp(2.3rem,4.6vw,3.4rem);
+    font-weight:500;line-height:1.08;margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .word-wrap{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.08em;margin-bottom:-0.08em;}
+  .hero h1 .word{display:inline-block;transform:translateY(115%);animation:wordUp .7s cubic-bezier(.22,1,.36,1) forwards;}
+  @keyframes wordUp{to{transform:translateY(0);}}
+  .hero-role{font-size:1.08rem;color:var(--text-soft);max-width:46ch;margin:0 0 28px;}
+  .hero-role strong{color:var(--teal);font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:1.06em;}
+
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;border-radius:2px;font-size:0.92rem;font-weight:600;
+    text-decoration:none;border:1px solid transparent;transition:all .25s ease;
+  }
+  .btn-primary{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;}
+  .btn-primary::before{
+    content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(237,231,217,0.28),transparent);
+    transform:skewX(-20deg);transition:left .6s ease;
+  }
+  .btn-primary:hover::before{left:120%;}
+  .btn-primary:hover{background:var(--clay);transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,0.18);}
+  .btn-ghost{border-color:var(--text);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--clay);color:var(--clay);transform:translateY(-2px);}
+
+  .photo-frame{
+    position:relative;background:var(--ink);padding:14px;
+    transition:transform .4s ease;
+  }
+  .photo-frame:hover{transform:translateY(-6px);}
+  .photo-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--ink);filter:grayscale(1) contrast(1.05);transition:filter .4s ease;}
+  .photo-frame:hover img{filter:grayscale(0.5) contrast(1.08);}
+  .photo-tag{
+    position:absolute;bottom:-1px;left:14px;right:14px;
+    background:var(--paper);border-top:2px solid var(--clay);
+    padding:10px 14px;font-size:0.76rem;color:var(--text-soft);
+    display:flex;justify-content:space-between;gap:8px;
+  }
+  .photo-tag b{color:var(--text);font-weight:600;}
+
+  .photo-badge{
+    position:absolute;top:-16px;right:-16px;width:82px;height:82px;border-radius:50%;
+    background:var(--clay);color:var(--paper);border:3px solid var(--paper);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-family:'Fraunces',serif;font-size:0.62rem;font-weight:600;line-height:1.25;
+    letter-spacing:0.02em;box-shadow:0 6px 14px rgba(0,0,0,0.2);
+    padding:6px;animation:badgeFloat 4s ease-in-out infinite;
+  }
+  @keyframes badgeFloat{0%,100%{transform:rotate(8deg) translateY(0);}50%{transform:rotate(8deg) translateY(-6px);}}
+  @media(max-width:860px){.photo-badge{width:70px;height:70px;font-size:0.55rem;}}
+
+  /* ---------- LEDGER / STATS ---------- */
+  .ledger{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:34px 0;
+  }
+  .ledger-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  @media(max-width:700px){.ledger-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}}
+  .ledger-item{
+    text-align:center;border-left:1px solid var(--line);padding:0 12px;
+    transition:transform .3s ease;
+  }
+  .ledger-item:hover{transform:translateY(-4px);}
+  .ledger-item:hover .ledger-num{color:var(--clay);}
+  .ledger-item:first-child{border-left:none;}
+  @media(max-width:700px){
+    .ledger-item:nth-child(odd){border-left:none;}
+  }
+  .ledger-num{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:500;color:var(--teal);transition:color .3s ease;}
+  .ledger-label{font-size:0.8rem;color:var(--text-soft);margin-top:4px;}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-num{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.76rem;color:var(--clay);font-weight:700;margin-bottom:14px;
+    letter-spacing:0.05em;text-transform:uppercase;
+  }
+  .section-num::before{content:'';width:18px;height:2px;background:var(--clay);}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:500;margin:0 0 14px;}
+  .section-head p{color:var(--text-soft);margin:0;}
+
+  /* Profil */
+  .profil p{
+    font-size:1.14rem;line-height:1.75;max-width:74ch;color:var(--text);
+  }
+  .profil p::first-letter{
+    font-family:'Fraunces',serif;font-size:3.4rem;float:left;line-height:0.8;
+    padding-right:10px;padding-top:8px;color:var(--teal);font-weight:500;
+  }
+
+  /* Domaines table-grid */
+  .domaines{
+    border-top:1px solid var(--line);
+  }
+  .domaine-row{
+    display:grid;grid-template-columns:220px 1fr;gap:24px;
+    padding:26px 20px;margin:0 -20px;border-bottom:1px solid var(--line);
+    transition:background .25s ease,padding-left .25s ease;
+  }
+  .domaine-row:hover{background:var(--paper-2);padding-left:28px;}
+  @media(max-width:640px){.domaine-row{grid-template-columns:1fr;gap:6px;}}
+  .domaine-row h3{font-size:1.15rem;font-weight:500;margin:0;color:var(--teal);transition:color .25s ease;display:flex;align-items:baseline;gap:10px;}
+  .domaine-row .d-num{font-size:0.72rem;color:var(--brass);font-weight:700;font-family:'Inter',sans-serif;letter-spacing:0.03em;}
+  .domaine-row:hover h3{color:var(--clay);}
+  .domaine-row p{margin:0;color:var(--text-soft);max-width:60ch;}
+
+  /* Timeline */
+  .volet-positioning{
+    max-width:70ch;color:var(--text-soft);margin-bottom:40px;font-size:1.02rem;
+  }
+  .timeline{position:relative;padding-left:28px;border-left:2px solid var(--line);}
+  .t-item{position:relative;padding-bottom:32px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:'';position:absolute;left:-34px;top:4px;width:11px;height:11px;
+    background:var(--paper);border:2px solid var(--clay);border-radius:50%;
+    transition:transform .3s ease,background .3s ease;
+  }
+  .t-item:hover::before{transform:scale(1.5);background:var(--clay);}
+  .timeline .t-item:first-child::before{animation:pulseDot 2.6s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(156,59,46,0.35);}50%{box-shadow:0 0 0 6px rgba(156,59,46,0);}}
+  .t-period{font-size:0.8rem;color:var(--clay);font-weight:600;margin-bottom:4px;}
+  .t-title{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;margin:0 0 4px;}
+  .t-client{font-size:0.88rem;color:var(--text-soft);margin:0 0 8px;font-weight:500;}
+  .t-desc{margin:0;color:var(--text-soft);font-size:0.95rem;max-width:64ch;}
+
+  /* Certifications */
+  .cert-row{display:flex;flex-wrap:wrap;gap:28px;}
+  .seal{
+    width:150px;text-align:center;transition:transform .3s ease;
+  }
+  .seal:hover{transform:translateY(-22px);}
+  .seal-ring{
+    width:104px;height:104px;border-radius:50%;
+    border:2px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 12px;position:relative;
+    transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .seal:hover .seal-ring{transform:scale(1.06) rotate(-4deg);box-shadow:0 10px 22px rgba(0,0,0,0.12);}
+  .seal-ring::before{
+    content:'';position:absolute;inset:6px;border:1px dashed var(--brass);border-radius:50%;
+  }
+  .seal-ring span{font-family:'Fraunces',serif;font-weight:600;font-size:0.95rem;color:var(--brass);padding:0 10px;}
+  .seal-ribbon{
+    width:0;height:22px;margin:-4px auto 10px;position:relative;
+  }
+  .seal-ribbon::before,.seal-ribbon::after{
+    content:'';position:absolute;top:0;width:16px;height:22px;background:var(--brass);
+  }
+  .seal-ribbon::before{left:-10px;clip-path:polygon(0 0,100% 0,100% 100%,50% 75%,0 100%);}
+  .seal-ribbon::after{left:6px;clip-path:polygon(0 0,100% 0,100% 100%,50% 75%,0 100%);opacity:0.75;}
+  .seal p{font-size:0.82rem;color:var(--text-soft);margin:0;}
+
+  /* IFECARM panel */
+  .ifecarm{
+    background:var(--teal);color:var(--paper);
+  }
+  .ifecarm .section-head p{color:rgba(237,231,217,0.75);}
+  .ifecarm .section-num{color:var(--brass);}
+  .ifecarm .section-num::before{background:var(--brass);}
+  .ifecarm-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  @media(max-width:760px){.ifecarm-grid{grid-template-columns:1fr;}}
+  .ifecarm-grid h3{font-size:1.3rem;font-weight:500;margin:0 0 14px;}
+  .ifecarm-grid p{color:rgba(237,231,217,0.82);margin:0 0 14px;font-size:1rem;}
+  .ifecarm-list{list-style:none;margin:0;padding:0;}
+  .ifecarm-list li{
+    padding:12px 0;border-top:1px solid var(--line-dark);font-size:0.95rem;color:rgba(237,231,217,0.85);
+  }
+  .ifecarm-list li:last-child{border-bottom:1px solid var(--line-dark);}
+  .ifecarm-list b{color:var(--paper);font-weight:600;}
+
+  /* LIVRES */
+  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  @media(max-width:760px){.book-grid{grid-template-columns:1fr;}}
+  .book-card{
+    background:var(--paper-2);border:1px solid var(--line);
+    display:flex;flex-direction:column;
+    transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .book-card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(23,32,42,0.14);}
+  .book-cover-mini{
+    background:var(--ink);color:var(--paper);padding:26px 24px;
+    border-bottom:3px solid var(--clay);
+    transition:border-color .3s ease;
+  }
+  .book-card:hover .book-cover-mini{border-bottom-color:var(--brass);}
+  .book-collection{font-size:0.7rem;letter-spacing:0.04em;color:var(--brass);margin-bottom:10px;text-transform:uppercase;}
+  .book-cover-mini h3{font-family:'Fraunces',serif;font-size:1.3rem;line-height:1.25;font-weight:500;margin:0;}
+  .book-cover-mini .bc-sub2{font-size:0.85rem;color:rgba(237,231,217,0.65);margin-top:10px;}
+
+  .book-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+  .book-meta-mini{display:flex;gap:16px;flex-wrap:wrap;font-size:0.8rem;color:var(--text-soft);margin-bottom:14px;}
+  .book-meta-mini span{margin-right:16px;}
+  .book-meta-mini span:last-child{margin-right:0;}
+  .book-meta-mini b{color:var(--text);}
+  .book-desc{font-size:0.96rem;color:var(--text);margin:0 0 18px;line-height:1.6;}
+
+  .book-card details{margin-bottom:18px;border-top:1px solid var(--line);padding-top:14px;}
+  .book-card summary{
+    cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--teal);
+    list-style:none;display:flex;align-items:center;gap:8px;
+  }
+  .book-card summary::-webkit-details-marker{display:none;}
+  .book-card summary::before{content:'+';font-family:'Fraunces',serif;font-size:1.1rem;color:var(--clay);width:14px;}
+  .book-card details[open] summary::before{content:'–';}
+  .book-excerpt{
+    font-family:'Fraunces',serif;font-style:italic;font-size:0.95rem;line-height:1.7;
+    color:var(--text-soft);margin:14px 0 16px;padding-left:14px;border-left:2px solid var(--line);
+  }
+  .book-points{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  .book-points li{position:relative;padding-left:22px;font-size:0.88rem;color:var(--text-soft);}
+  .book-points li::before{content:'—';position:absolute;left:0;top:0;color:var(--clay);font-weight:600;}
+  .book-points b{color:var(--text);}
+
+  .book-footer{
+    margin-top:auto;display:flex;align-items:center;justify-content:space-between;
+    gap:14px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--line);
+  }
+  .book-price{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--teal);}
+  .book-price.tbd{font-size:0.85rem;color:var(--text-soft);font-family:'Inter',sans-serif;font-style:italic;}
+  .btn-sm{padding:10px 18px;font-size:0.82rem;}
+
+  /* CONTACT */
+  footer{background:var(--ink);color:var(--paper);padding:60px 0 34px;}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr;}}
+  footer .section-num{color:var(--brass);}
+  footer .section-num::before{background:var(--brass);}
+  .foot-bottom span{display:flex;align-items:center;gap:10px;}
+  footer h2{font-size:1.7rem;font-weight:500;margin:0 0 14px;}
+  footer p{color:rgba(237,231,217,0.7);max-width:44ch;}
+  .signature{font-family:'Parisienne',cursive;font-size:2rem;color:var(--brass);margin-top:20px;}
+  .contact-list{list-style:none;margin:24px 0 0;padding:0;}
+  .contact-list li{padding:10px 0;border-top:1px solid var(--line-dark);font-size:0.95rem;}
+  .contact-list a{text-decoration:none;color:var(--paper);}
+  .contact-list a:hover{color:var(--brass);}
+  .foot-bottom{
+    margin-top:50px;padding-top:20px;border-top:1px solid var(--line-dark);
+    font-size:0.78rem;color:rgba(237,231,217,0.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  /* reveal */
+  .reveal{animation:rise .7s ease both;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+  .fade-up{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .fade-up.is-visible{opacity:1;transform:translateY(0);}
+
+  .scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none;}
+  .scroll-progress span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--clay),var(--brass));}
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{animation:none;}
+    .fade-up{opacity:1;transform:none;transition:none;}
+    .hero::before,.hero::after{animation:none;}
+    .photo-badge{animation:none;}
+    .hero h1 .word{animation:none;transform:none;}
+    .timeline .t-item:first-child::before{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress"><span id="scrollProgress"></span></div>
+<div class="topbar"><span></span><span></span><span></span></div>
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="#"><span class="brand-mark">TC</span>Tatiana <span>Capo-Chichi</span></a>
+    <div class="nav-right">
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#qhse">QHSE</a></li>
+          <li><a href="#rh">Ressources Humaines</a></li>
+          <li><a href="#ifecarm">IFECARM</a></li>
+          <li><a href="#livres">Livres</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="hero-kicker">Consultante Senior · Auditrice · Formatrice</div>
+      <h1 id="heroTitle">Faire de la conformité un langage commun, pas une contrainte.</h1>
+      <p class="hero-role">23 ans à accompagner des organisations d'Afrique francophone en <strong>QHSE, audit et certification ISO</strong>, et en <strong>capital humain</strong> — de l'analyse des risques à la structuration des équipes.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Me contacter</a>
+        <a href="#livres" class="btn btn-ghost">Découvrir mes livres</a>
+      </div>
+    </div>
+    <div class="photo-frame reveal">
+      <img src="portrait.jpeg" alt="Portrait de Tatiana Capo-Chichi">
+      <div class="photo-badge">23 ans<br>d'expertise</div>
+      <div class="photo-tag">
+        <span>Cotonou, Bénin</span>
+        <b>Directrice Afrique — IFECARM GROUP</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ledger">
+  <div class="wrap ledger-grid">
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="23" data-suffix=" ans">0 ans</div><div class="ledger-label">d'expérience professionnelle</div></div>
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="20" data-suffix="+">0+</div><div class="ledger-label">missions d'audit QSE / ISO</div></div>
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="5" data-suffix=" pays">0 pays</div><div class="ledger-label">Bénin, Togo, Côte d'Ivoire, Burkina Faso, Congo</div></div>
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="2" data-suffix="">0</div><div class="ledger-label">expertises : QHSE & Capital humain</div></div>
+  </div>
+</div>
+
+<section id="profil" class="profil fade-up">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">01 — Profil</div>
+      <h2>Une double lecture des organisations</h2>
+    </div>
+    <p>Cadre-conseil, auditrice et formatrice certifiée, j'accompagne depuis 23 ans les directions et les équipes dans la structuration de systèmes de management, la conformité réglementaire, la préparation à la certification, l'audit organisationnel et le développement des compétences. Mon parcours combine la rigueur d'un audit et la compréhension des enjeux humains — traduire un référentiel en dispositif opérationnel, adapté aux réalités des organisations africaines, plutôt qu'en documentation qui dort dans un tiroir.</p>
+  </div>
+</section>
+
+<section class="domaines">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">02 — Domaines</div>
+      <h2>Où j'apporte de la valeur</h2>
+    </div>
+    <div class="domaine-row fade-up">
+      <h3><span class="d-num">01</span>Audit & assurance</h3>
+      <p>Audits internes, diagnostics, audits à blanc, conformité réglementaire et préparation à la certification.</p>
+    </div>
+    <div class="domaine-row fade-up">
+      <h3><span class="d-num">02</span>Systèmes de management</h3>
+      <p>ISO 9001, ISO 14001, ISO 45001, ISO 21001, systèmes de management intégrés et amélioration continue.</p>
+    </div>
+    <div class="domaine-row fade-up">
+      <h3><span class="d-num">03</span>Risques & conformité</h3>
+      <p>Analyse des risques, exigences légales, maîtrise opérationnelle et actions correctives.</p>
+    </div>
+    <div class="domaine-row fade-up">
+      <h3><span class="d-num">04</span>Capital humain</h3>
+      <p>Audit RH, organisation, procédures, compétences, performance et accompagnement managérial.</p>
+    </div>
+    <div class="domaine-row fade-up">
+      <h3><span class="d-num">05</span>Formation & transfert</h3>
+      <p>Ingénierie pédagogique, formation d'adultes, simulations d'audit et évaluation des acquis.</p>
+    </div>
+    <div class="domaine-row fade-up">
+      <h3><span class="d-num">06</span>Transformation & pilotage</h3>
+      <p>Cartographies de processus, indicateurs, tableaux de bord, coaching et conduite du changement.</p>
+    </div>
+  </div>
+</section>
+
+<section id="qhse">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">03 — Volet QHSE</div>
+      <h2>Audit, conseil, certification, conformité</h2>
+    </div>
+    <p class="volet-positioning">Pilotage de démarches de certification et de systèmes de management intégrés QSE ; audits de conformité, diagnostics, audits internes et à blanc ; structuration des processus et traitement des non-conformités ; conception et animation de formations ISO, audit et sécurité alimentaire.</p>
+    <div class="timeline">
+      <div class="t-item fade-up">
+        <div class="t-period">Avr. 2022 — Janv. 2026</div>
+        <h3 class="t-title">Accompagnement à la triple certification ISO 9001, 14001 et 45001</h3>
+        <p class="t-client">OFMAS International — Bénin</p>
+        <p class="t-desc">Diagnostic initial et analyse des écarts multi-référentiels, structuration du système de management intégré, coordination du déploiement et accompagnement des pilotes de processus.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Mars 2025</div>
+        <h3 class="t-title">Audit à blanc</h3>
+        <p class="t-client">Loterie Nationale du Burkina Faso (LONAB)</p>
+        <p class="t-desc">Préparation de mission, analyse documentaire, audit sur site, identification des écarts et restitution.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Nov. 2024 & Fév. 2023</div>
+        <h3 class="t-title">Audits réglementaires annuels — terminal hydrocarbures et réseau de distribution</h3>
+        <p class="t-client">ORYX Bénin S.A. — mission pour GZ Corporation</p>
+        <p class="t-desc">Vérification de conformité réglementaire, évaluation des pratiques environnementales et sécuritaires, contribution aux rapports d'audit.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Sept. 2024</div>
+        <h3 class="t-title">Système de management intégré : le défi de la triple certification</h3>
+        <p class="t-client">OFMAS International</p>
+        <p class="t-desc">Formation à l'appropriation des exigences ISO 9001, 14001 et 45001, cas pratiques et mise en situation.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Mai 2024</div>
+        <h3 class="t-title">Formation Lead Auditor ISO 45001</h3>
+        <p class="t-client">Intexpert Engineering — Côte d'Ivoire</p>
+        <p class="t-desc">Méthodologie d'audit, planification, conduite et évaluation des auditeurs.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Déc. 2023 & Nov. 2023</div>
+        <h3 class="t-title">Audits environnementaux — travaux publics</h3>
+        <p class="t-client">JWHC & China Harbour Engineering (mission pour GZ Corporation)</p>
+        <p class="t-desc">Collecte d'informations sur site, analyse de conformité, identification des écarts et rédaction des rapports.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Janv. 2026 — en cours</div>
+        <h3 class="t-title">Renforcement des bonnes pratiques d'hygiène en transformation agroalimentaire</h3>
+        <p class="t-client">Soriz et Huilerie Calumet — Projet PAEB / ADPME</p>
+        <p class="t-desc">Diagnostic des pratiques, identification des risques sanitaires, formation aux BPH et accompagnement des équipes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rh">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">04 — Volet Ressources Humaines</div>
+      <h2>Audit organisationnel & structuration RH</h2>
+    </div>
+    <p class="volet-positioning">Audit des systèmes de management des ressources humaines et diagnostic organisationnel ; formalisation des procédures administratives et RH ; pilotage de la performance par indicateurs ; accompagnement des dirigeants et coaching individuel.</p>
+    <div class="timeline">
+      <div class="t-item fade-up">
+        <div class="t-period">Missions sélectionnées</div>
+        <h3 class="t-title">Audit du système de management des ressources humaines</h3>
+        <p class="t-client">Cargo Bénin, IT NUM Bénin, Mark Horus, WACCS et Groupe Mega Label</p>
+        <p class="t-desc">Analyse de l'organisation, des responsabilités et des dispositifs de pilotage ; actualisation des manuels de procédures RH.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Missions sélectionnées</div>
+        <h3 class="t-title">Audit RH et élaboration de manuels de procédures administratives</h3>
+        <p class="t-client">Fonds d'Aide à l'Alphabétisation / Alpha Stratégies et Fonds de Garantie Automobile (FGA Bénin)</p>
+        <p class="t-desc">Diagnostic des pratiques administratives et RH, formalisation des procédures et sécurisation des responsabilités.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Accompagnement</div>
+        <h3 class="t-title">Coaching des dirigeants et accompagnement individuel</h3>
+        <p class="t-client">Groupe Mega Label</p>
+        <p class="t-desc">Renforcement des capacités managériales, développement du leadership et soutien à la gestion du changement.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">2017 — 2023</div>
+        <h3 class="t-title">Recrutements de grande envergure pour programmes internationaux</h3>
+        <p class="t-client">Banque Mondiale, UNFPA, FIDA, John Hopkins University, MCA Bénin — via Leadership et Développement / GECA-Prospective</p>
+        <p class="t-desc">Pilotage du recrutement de plusieurs centaines d'agents de collecte et de superviseurs sur des programmes nationaux et régionaux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">05 — Certifications</div>
+      <h2>Qualifications professionnelles</h2>
+    </div>
+    <div class="cert-row">
+      <div class="seal fade-up"><div class="seal-ring"><span>Lead Auditor</span></div><div class="seal-ribbon"></div><p>ISO 9001 · 14001 · 45001 · 21001 — PECB International</p></div>
+      <div class="seal fade-up"><div class="seal-ring"><span>Formatrice QSSE</span></div><div class="seal-ribbon"></div><p>ISO 9001 · 14001 · 45001 — PECB International</p></div>
+      <div class="seal fade-up"><div class="seal-ring"><span>Auditrice interne</span></div><div class="seal-ribbon"></div><p>ISO 19011:2018 — Best Conseils</p></div>
+      <div class="seal fade-up"><div class="seal-ring"><span>Master RH</span></div><div class="seal-ribbon"></div><p>Management des Ressources Humaines</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ifecarm" class="ifecarm">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">06 — Affiliation</div>
+      <h2>Directrice Afrique — IFECARM GROUP</h2>
+    </div>
+    <div class="ifecarm-grid">
+      <div>
+        <h3>Un cabinet QHSE panafricain</h3>
+        <p>IFECARM Group est un cabinet de conseil spécialisé en Qualité, Hygiène, Sécurité, Sûreté, Énergie et Environnement, basé à Cotonou avec une présence internationale. J'y pilote le développement stratégique, l'expertise et l'excellence QHSE pour les opérations africaines du groupe.</p>
+        <p>Le cabinet intervient au Bénin, au Togo, en Côte d'Ivoire, au Cameroun, au Sénégal, au Gabon, au Burkina Faso, au Congo, ainsi qu'en France et en Europe.</p>
+      </div>
+      <ul class="ifecarm-list">
+        <li><b>Ingénierie & audits QHSE</b> — diagnostics, audits internes et réglementaires</li>
+        <li><b>Formations</b> — SST, incendie/SSIAP, habilitations électriques, ATEX, CACES, référent HSE</li>
+        <li><b>Certification ISO</b> — 9001, 14001, 45001, 22000, 50001</li>
+        <li><b>Conseil RH & performance</b> — gestion de crise, plan de continuité d'activité</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="livres">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">07 — Livres</div>
+      <h2>Écrits pour transmettre ce que le terrain m'a appris</h2>
+      <p>Des guides pratiques et des récits ancrés dans le quotidien professionnel africain — à lire, appliquer et partager en équipe.</p>
+    </div>
+
+    <div class="book-grid">
+
+      <div class="book-card fade-up">
+        <div class="book-cover-mini">
+          <div class="book-collection">Customer Care Afrique — Saisons 1 à 5</div>
+          <h3>Ils ne se plaignent pas, ils partent</h3>
+          <div class="bc-sub2">Voir. Comprendre. Soutenir. Agir. Réparer.</div>
+        </div>
+        <div class="book-body">
+          <div class="book-meta-mini"><span><b>276 p.</b></span><span>5 saisons · 12 épisodes</span><span>PDF</span></div>
+          <p class="book-desc">Un ebook en 5 saisons narratives, ancré dans le quotidien des organisations africaines, pour apprendre à repérer les signaux faibles de l'insatisfaction client avant la rupture silencieuse — et agir avec des outils concrets.</p>
+          <details>
+            <summary>Lire un extrait & les arguments</summary>
+            <p class="book-excerpt">« À huit heures vingt-sept, Amina pousse la porte vitrée d'une clinique privée d'Abidjan avec Mouhamed contre elle... Vous êtes bien enregistrés. Asseyez-vous, on va vous appeler. » — C'est ainsi que commence chaque rupture silencieuse : non pas dans un incident majeur, mais dans une attente inexpliquée.</p>
+            <ul class="book-points">
+              <li><b>Un ancrage 100% africain</b> — cliniques, agences, boutiques d'Afrique francophone.</li>
+              <li><b>De la narration à l'outil</b> — grilles d'analyse et outils réutilisables en équipe.</li>
+              <li><b>Une expertise double</b> — Lead Auditor ISO croisée à l'expérience RH.</li>
+            </ul>
+          </details>
+          <div class="book-footer">
+            <div class="book-price">18 000 FCFA</div>
+            <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Ils%20ne%20se%20plaignent%20pas%2C%20ils%20partent%20%C2%BB." class="btn btn-primary btn-sm" target="_blank">Commander</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card fade-up">
+        <div class="book-cover-mini">
+          <div class="book-collection">Leadership & racines</div>
+          <h3>Et si le leadership féminin était déjà en vous ?</h3>
+          <div class="bc-sub2">Révéler, affirmer et construire son propre leadership sans perdre ses racines</div>
+        </div>
+        <div class="book-body">
+          <div class="book-meta-mini"><span><b>196 p.</b></span><span>Méthode ANCRAGE</span></div>
+          <p class="book-desc">Un guide de réflexion et d'action pour les femmes qui veulent prendre leur place, renforcer leur légitimité et exercer un leadership authentique sans renier leurs valeurs ni leurs racines.</p>
+          <details>
+            <summary>Lire un extrait & les arguments</summary>
+            <p class="book-excerpt">« Sept heures dix, Douala. Clarisse relit une dernière fois la note qu'elle a préparée... Quatre femmes. Quatre villes. Aucune de ces décisions ne figurera dans un rapport annuel — et pourtant, chacune a fait exactement ce que fait un leader. »</p>
+            <ul class="book-points">
+              <li><b>Reconnaissez le leadership que vous exercez déjà</b> — même là où il n'est jamais nommé.</li>
+              <li><b>Prenez votre place sans vous renier</b> — légitimité, voix, limites, ambition.</li>
+              <li><b>Passez à l'action</b> — boussole ANCRAGE, exercices et plan à 90 jours.</li>
+            </ul>
+          </details>
+          <div class="book-footer">
+            <div class="book-price">9 900 FCFA</div>
+            <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Et%20si%20le%20leadership%20f%C3%A9minin%20%C3%A9tait%20d%C3%A9j%C3%A0%20en%20vous%20%3F%20%C2%BB." class="btn btn-primary btn-sm" target="_blank">Commander</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card fade-up">
+        <div class="book-cover-mini">
+          <div class="book-collection">Guide-action pour dirigeants</div>
+          <h3>Mieux organiser sa PME</h3>
+          <div class="bc-sub2">Transformer les dysfonctionnements quotidiens en un système plus clair, plus fiable et mieux piloté</div>
+        </div>
+        <div class="book-body">
+          <div class="book-meta-mini"><span><b>347 p.</b></span><span>PDF recommandé</span></div>
+          <p class="book-desc">Un guide pratique pour aider les dirigeants de PME à identifier leurs dysfonctionnements, clarifier leur organisation et construire un fonctionnement plus fiable, sans créer une bureaucratie inutile.</p>
+          <details>
+            <summary>Lire un extrait & les arguments</summary>
+            <p class="book-excerpt">« Une commande inhabituelle ? On l'appelle. Un client mécontent ? On l'appelle... Cette situation apparaît souvent parce que l'activité a grandi plus vite que son organisation. »</p>
+            <ul class="book-points">
+              <li><b>Identifiez ce qui coûte réellement à votre PME</b> — retards, reprises, erreurs, dépendance au dirigeant.</li>
+              <li><b>Passez du constat à l'action</b> — méthodes, modèles et check-lists applicables.</li>
+              <li><b>Structurez sans bureaucratiser</b> — clarifiez, déléguez, pilotez avec quelques indicateurs.</li>
+            </ul>
+          </details>
+          <div class="book-footer">
+            <div class="book-price tbd">Prix à venir</div>
+            <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Mieux%20organiser%20sa%20PME%20%C2%BB." class="btn btn-ghost btn-sm" target="_blank">Être informé(e)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card fade-up">
+        <div class="book-cover-mini">
+          <div class="book-collection">Parler • Captiver • Inspirer — Tome 1</div>
+          <h3>Tes mots sont plus forts que ta peur</h3>
+          <div class="bc-sub2">Comment retrouver ta voix, pas à pas</div>
+        </div>
+        <div class="book-body">
+          <div class="book-meta-mini"><span><b>100 p.</b></span><span>12 défis d'éloquence</span></div>
+          <p class="book-desc">Un guide pratique et inspirant pour dépasser la peur du jugement, retrouver confiance en sa voix et oser prendre la parole avec authenticité.</p>
+          <details>
+            <summary>Lire un extrait & les arguments</summary>
+            <p class="book-excerpt">« Vous connaissez la réponse. Mieux encore : vous avez une idée... Le courage, c'est décider que votre voix mérite davantage d'espace que votre peur. »</p>
+            <ul class="book-points">
+              <li><b>Une méthode progressive</b> pour comprendre ses blocages et oser s'exprimer.</li>
+              <li><b>Des exercices concrets</b> et 12 défis pour transformer la lecture en action.</li>
+              <li><b>Des situations réalistes</b> adaptées aux étudiants et jeunes professionnels.</li>
+            </ul>
+          </details>
+          <div class="book-footer">
+            <div class="book-price tbd">Prix à venir</div>
+            <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Tes%20mots%20sont%20plus%20forts%20que%20ta%20peur%20%C2%BB." class="btn btn-ghost btn-sm" target="_blank">Être informé(e)</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="topbar"><span></span><span></span><span></span></div>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="section-num">08 — Contact</div>
+      <h2>Discutons de votre projet</h2>
+      <p>Certification ISO, audit QHSE, structuration RH ou formation d'équipes — je suis disponible pour des missions au Bénin et dans la sous-région.</p>
+      <a href="mailto:tatianacapochichi2013@gmail.com" class="btn btn-primary" style="margin-top:22px;background:var(--brass);">Écrire un email</a>
+      <div class="signature">Tatiana Capo-Chichi</div>
+    </div>
+    <ul class="contact-list">
+      <li>Téléphone — <a href="tel:+22901666161586">+229 01 66 61 61 58</a></li>
+      <li>WhatsApp — <a href="https://wa.me/2290195563616">+229 01 95 56 36 16</a></li>
+      <li>Email — <a href="mailto:tatianacapochichi2013@gmail.com">tatianacapochichi2013@gmail.com</a></li>
+      <li>Localisation — Cotonou, Bénin</li>
+    </ul>
+  </div>
+  <div class="wrap foot-bottom">
+    <span><span class="brand-mark" style="width:26px;height:26px;font-size:0.62rem;">TC</span> © 2026 Tatiana Capo-Chichi</span>
+    <span>Directrice Afrique — IFECARM GROUP</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        var open = nav.classList.toggle('is-open');
+        toggle.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          nav.classList.remove('is-open');
+          toggle.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+</script>
+<script>
+  (function(){
+    var bar = document.getElementById('scrollProgress');
+    if(!bar) return;
+    var ticking = false;
+    function update(){
+      var h = document.documentElement;
+      var scrolled = h.scrollTop || document.body.scrollTop;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+    update();
+  })();
+</script>
+<script>
+  (function(){
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var title = document.getElementById('heroTitle');
+    if(title && !reduceMotion){
+      var words = title.textContent.trim().split(/\s+/);
+      title.innerHTML = words.map(function(w, i){
+        return '<span class="word-wrap"><span class="word" style="animation-delay:' + (i * 45) + 'ms">' + w + '</span></span>';
+      }).join(' ');
+    }
+  })();
+</script>
+<script>
+  (function(){
+    function animateCount(el){
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      if(isNaN(target)) return;
+      var start = performance.now();
+      var dur = 1000;
+      function tick(now){
+        var p = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    var items = document.querySelectorAll('.fade-up');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!('IntersectionObserver' in window)){
+      items.forEach(function(el){
+        el.classList.add('is-visible');
+        var num = el.querySelector('.ledger-num');
+        if(num) num.textContent = num.getAttribute('data-count') + (num.getAttribute('data-suffix') || '');
+      });
+      return;
+    }
+    // stagger siblings that share a direct parent (rows, cards, seals)
+    var counters = new WeakMap();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          var parent = el.parentElement;
+          var idx = counters.get(parent) || 0;
+          counters.set(parent, idx + 1);
+          el.style.transitionDelay = Math.min(idx * 90, 360) + 'ms';
+          el.classList.add('is-visible');
+          var num = el.querySelector('.ledger-num');
+          if(num){
+            if(reduceMotion){
+              num.textContent = num.getAttribute('data-count') + (num.getAttribute('data-suffix') || '');
+            } else {
+              animateCount(num);
+            }
+          }
+          io.unobserve(el);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
