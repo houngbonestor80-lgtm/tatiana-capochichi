@@ -58,7 +58,11 @@
     padding:18px 32px;max-width:1120px;margin:0 auto;
   }
   .nav-right{display:flex;align-items:center;gap:14px;}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Parisienne',cursive;font-size:2.7rem;font-weight:400;letter-spacing:0.01em;text-decoration:none;margin-left:-14px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Parisienne',cursive;font-size:2.7rem;font-weight:400;letter-spacing:0.01em;text-decoration:none;margin-left:-14px;white-space:nowrap;}
+  @media(max-width:480px){
+    .brand{font-size:1.5rem;margin-left:-4px;gap:8px;}
+    .brand-mark{width:28px;height:28px;font-size:0.68rem;}
+  }
   .brand-mark{
     width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);
     display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;
