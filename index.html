@@ -315,6 +315,7 @@
     transition:border-color .3s ease;
   }
   .book-card:hover .book-cover-mini{border-bottom-color:var(--brass);}
+  .book-cover-img{display:block;width:100%;height:auto;}
   .book-collection{font-size:0.7rem;letter-spacing:0.04em;color:var(--brass);margin-bottom:10px;text-transform:uppercase;}
   .book-cover-mini h3{font-family:'Fraunces',serif;font-size:1.3rem;line-height:1.25;font-weight:500;margin:0;}
   .book-cover-mini .bc-sub2{font-size:0.85rem;color:rgba(237,231,217,0.65);margin-top:10px;}
@@ -326,14 +327,17 @@
   .book-meta-mini b{color:var(--text);}
   .book-desc{font-size:0.96rem;color:var(--text);margin:0 0 18px;line-height:1.6;}
 
-  .book-card details{margin-bottom:18px;border-top:1px solid var(--line);padding-top:14px;}
-  .book-card summary{
+  .book-card details,.t-item details{margin-bottom:18px;border-top:1px solid var(--line);padding-top:14px;}
+  .book-card summary,.t-item summary{
     cursor:pointer;font-size:0.85rem;font-weight:600;color:var(--teal);
     list-style:none;display:flex;align-items:center;gap:8px;
   }
-  .book-card summary::-webkit-details-marker{display:none;}
-  .book-card summary::before{content:'+';font-family:'Fraunces',serif;font-size:1.1rem;color:var(--clay);width:14px;}
-  .book-card details[open] summary::before{content:'–';}
+  .book-card summary::-webkit-details-marker,.t-item summary::-webkit-details-marker{display:none;}
+  .book-card summary::before,.t-item summary::before{content:'+';font-family:'Fraunces',serif;font-size:1.1rem;color:var(--clay);width:14px;}
+  .book-card details[open] summary::before,.t-item details[open] summary::before{content:'–';}
+  .t-item details ul,.t-item > ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+  .t-item details li,.t-item > ul li{font-size:0.9rem;color:var(--text-soft);}
+  .t-item details li b,.t-item > ul li b{color:var(--text);}
   .book-excerpt{
     font-family:'Fraunces',serif;font-style:italic;font-size:0.95rem;line-height:1.7;
     color:var(--text-soft);margin:14px 0 16px;padding-left:14px;border-left:2px solid var(--line);
@@ -536,8 +540,36 @@
       <div class="t-item fade-up">
         <div class="t-period">Janv. 2026 — en cours</div>
         <h3 class="t-title">Renforcement des bonnes pratiques d'hygiène en transformation agroalimentaire</h3>
-        <p class="t-client">Soriz et Huilerie Calumet — Projet PAEB / ADPME</p>
-        <p class="t-desc">Diagnostic des pratiques, identification des risques sanitaires, formation aux BPH et accompagnement des équipes.</p>
+        <p class="t-client">Société de Rizerie de Zogbodomé & Huilerie Calumet — Projet PAEB / ADPME</p>
+        <p class="t-desc">Diagnostic des pratiques, identification des risques sanitaires et des non-conformités ; formation aux BPH, élaboration de procédures d'hygiène et accompagnement des équipes.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">Juin 2026</div>
+        <h3 class="t-title">Renforcement des compétences des auditeurs internes SMI QSE (ISO 19011)</h3>
+        <p class="t-client">Kékéli Efficient Power / Tagnon Afrique — Togo</p>
+        <p class="t-desc">Conception pédagogique, animation, simulations d'audit et évaluation des apprenants.</p>
+      </div>
+      <div class="t-item fade-up">
+        <div class="t-period">2019 — 2023</div>
+        <h3 class="t-title">Autres formations et missions de renforcement des compétences</h3>
+        <p class="t-client">Groupe Mega Label, Bouygues Bénin, Port autonome de Cotonou, et 9 autres organisations</p>
+        <details>
+          <summary>Voir les 12 missions</summary>
+          <ul>
+            <li><b>Oct. 2023</b> — Indicateurs de performance et auto-évaluation (KPI, outils de suivi, analyse des résultats et amélioration) — Groupe Mega Label</li>
+            <li><b>Fév. 2023</b> — Formation Lead Auditor ISO 45001 : audit interne et externe, simulations, traitement des non-conformités et rapports — Maestria Conseils / Port autonome de Cotonou</li>
+            <li><b>Sept. 2022</b> — Formation Lead Implementer ISO 45001 : dangers, risques SST, documentation, déploiement et amélioration continue — Agents HSE de Bouygues Bénin</li>
+            <li><b>Août 2022</b> — Formation Lead Implementer ISO 14001 : analyse environnementale, aspects et impacts, conformité et performance — Agents HSE de Bouygues Bénin</li>
+            <li><b>Août 2022</b> — Formation Lead Implementer ISO 9001 : processus, documentation, indicateurs et amélioration continue — Agents HSE de Bouygues Bénin</li>
+            <li><b>Fév. 2022</b> — Mise en œuvre des exigences ISO 9001 : processus, risques, actions correctives et suivi des performances — Phenix Partners</li>
+            <li><b>Oct. 2021</b> — Exigences du SMQ ISO 9001:2015 : diagnostic et plan de mise en conformité — Exma Conseils</li>
+            <li><b>Sept. 2021</b> — Exigences ISO 9001:2015 et mise en œuvre opérationnelle : sensibilisation, indicateurs et amélioration — Pro'Advisory</li>
+            <li><b>Juin 2020</b> — Formation des auditeurs internes selon ISO 19011:2018 : principes, planification, techniques d'audit et rapports — Leadership et Développement</li>
+            <li><b>Nov. 2019</b> — Sensibilisation du personnel : politique qualité, PDCA, non-conformités et maîtrise des prestataires — LEADD</li>
+            <li><b>Oct. 2019</b> — Exigences du système de management des organismes d'éducation ISO 21001:2018 — Institut Universitaire Cours Sonou</li>
+            <li><b>Juil. 2019</b> — Exigences du système de management de la qualité ISO 9001:2015 — GAPOB-SA</li>
+          </ul>
+        </details>
       </div>
     </div>
   </div>
@@ -565,9 +597,13 @@
       </div>
       <div class="t-item fade-up">
         <div class="t-period">Accompagnement</div>
-        <h3 class="t-title">Coaching des dirigeants et accompagnement individuel</h3>
+        <h3 class="t-title">Coaching et accompagnement managérial</h3>
         <p class="t-client">Groupe Mega Label</p>
-        <p class="t-desc">Renforcement des capacités managériales, développement du leadership et soutien à la gestion du changement.</p>
+        <ul>
+          <li><b>Coaching de dirigeants</b> — prise de décision stratégique, développement du leadership, conduite du changement et suivi des plans d'action.</li>
+          <li><b>Coaching individuel</b> — diagnostic des besoins, développement des compétences, accompagnement personnalisé et évaluation des progrès.</li>
+          <li><b>Appui technique au pilotage</b> — analyse des performances, définition des KPI, conception de tableaux de bord et aide à la décision.</li>
+        </ul>
       </div>
       <div class="t-item fade-up">
         <div class="t-period">Team building</div>
@@ -577,9 +613,32 @@
       </div>
       <div class="t-item fade-up">
         <div class="t-period">2017 — 2023</div>
-        <h3 class="t-title">Recrutements de grande envergure pour programmes internationaux</h3>
-        <p class="t-client">Banque Mondiale, UNFPA, FIDA, John Hopkins University, MCA Bénin — via Leadership et Développement / GECA-Prospective</p>
-        <p class="t-desc">Pilotage du recrutement de plusieurs centaines d'agents de collecte et de superviseurs sur des programmes nationaux et régionaux.</p>
+        <h3 class="t-title">Recrutements de masse et recrutement de cadres pour programmes internationaux</h3>
+        <p class="t-client">Banque Mondiale, UNFPA, FIDA, OMS, Enabel, Union européenne, PNLP, MCA Bénin — via GECA-Prospective / Leadership et Développement</p>
+        <p class="t-desc">Coordination de dispositifs de recrutement, sourcing et présélection, évaluation des candidatures, conduite d'entretiens, consolidation des résultats et aide à la décision, production de dossiers de recrutement — sur des missions financées par des bailleurs internationaux.</p>
+        <details>
+          <summary>Voir les 18 missions</summary>
+          <ul>
+            <li><b>Déc. 2023</b> — MCA Bénin — recrutement de 47 agents de collecte et superviseurs.</li>
+            <li><b>Sept. 2023</b> — Programme MNT / Enabel / OMS — recrutement de 59 agents de collecte et superviseurs.</li>
+            <li><b>Mai 2023</b> — FODEFCA / Banque mondiale — recrutement de 89 agents de collecte et superviseurs.</li>
+            <li><b>Avr. 2023</b> — ANSSP / UNFPA — recrutement de 60 agents de collecte et superviseurs.</li>
+            <li><b>Mars 2022</b> — MSH / PNLP Bénin — recrutement de 50 agents de collecte et superviseurs.</li>
+            <li><b>Janv. 2022</b> — PNLP / Johns Hopkins University — recrutement de 110 agents de collecte et superviseurs.</li>
+            <li><b>Déc. 2021</b> — Breakthrough Action Bénin / PNLP — recrutement de 54 agents de collecte et superviseurs.</li>
+            <li><b>Mars 2020</b> — PNLP Bénin — recrutement de 178 agents de collecte et superviseurs.</li>
+            <li><b>Déc. 2019</b> — CFEF / Ministère des Finances, RDC — recrutement de 51 agents.</li>
+            <li><b>Juil. 2019</b> — SFD-MSA / Cabinet SGE — recrutement de 5 agents collecteurs de tontine.</li>
+            <li><b>Nov. 2017</b> — PADEL-B et PRAPS-BF / Banque mondiale / GECA-Prospective — recrutement pour 16 postes.</li>
+            <li><b>Nov. 2017</b> — Programme Cadre ProCar / FIDA / GECA-Prospective — recrutement pour 5 postes.</li>
+            <li><b>Oct. 2017</b> — PASE / Banque mondiale / GECA-Prospective — recrutement pour 5 postes.</li>
+            <li><b>Oct. 2017</b> — UT-FED / Union européenne / GECA-Prospective — recrutement pour 2 postes.</li>
+            <li><b>Oct. 2017</b> — PAPAKIN et PIRAM, RDC / FIDA / GECA-Prospective — recrutement pour 14 postes.</li>
+            <li><b>Juin 2017</b> — PROCAD / GECA-Prospective — recrutement pour 21 postes.</li>
+            <li><b>Mars 2017</b> — Fonds national de développement agricole / GECA-Prospective — recrutement pour 13 postes.</li>
+            <li><b>Fév. 2017</b> — Programme Cadre ProCar / FIDA / GECA-Prospective — recrutement pour 5 postes.</li>
+          </ul>
+        </details>
       </div>
     </div>
   </div>
@@ -634,11 +693,7 @@
     <div class="book-grid">
 
       <div class="book-card fade-up">
-        <div class="book-cover-mini">
-          <div class="book-collection">Customer Care Afrique — Saisons 1 à 5</div>
-          <h3>Ils ne se plaignent pas, ils partent</h3>
-          <div class="bc-sub2">Voir. Comprendre. Soutenir. Agir. Réparer.</div>
-        </div>
+        <img class="book-cover-img" src="couv-ils-partent.jpg" alt="Couverture — Ils ne se plaignent pas, ils partent">
         <div class="book-body">
           <div class="book-meta-mini"><span><b>276 p.</b></span><span>5 saisons · 12 épisodes</span><span>PDF</span></div>
           <p class="book-desc">Un ebook en 5 saisons narratives, ancré dans le quotidien des organisations africaines, pour apprendre à repérer les signaux faibles de l'insatisfaction client avant la rupture silencieuse — et agir avec des outils concrets.</p>
@@ -684,11 +739,7 @@
       </div>
 
       <div class="book-card fade-up">
-        <div class="book-cover-mini">
-          <div class="book-collection">Guide-action pour dirigeants</div>
-          <h3>Mieux organiser sa PME</h3>
-          <div class="bc-sub2">Transformer les dysfonctionnements quotidiens en un système plus clair, plus fiable et mieux piloté</div>
-        </div>
+        <img class="book-cover-img" src="couv-pme.jpg" alt="Couverture — Mieux organiser sa PME">
         <div class="book-body">
           <div class="book-meta-mini"><span><b>347 p.</b></span><span>PDF recommandé</span></div>
           <p class="book-desc">Un guide pratique pour aider les dirigeants de PME à identifier leurs dysfonctionnements, clarifier leur organisation et construire un fonctionnement plus fiable, sans créer une bureaucratie inutile.</p>
@@ -709,11 +760,7 @@
       </div>
 
       <div class="book-card fade-up">
-        <div class="book-cover-mini">
-          <div class="book-collection">Parler • Captiver • Inspirer — Tome 1</div>
-          <h3>Tes mots sont plus forts que ta peur</h3>
-          <div class="bc-sub2">Comment retrouver ta voix, pas à pas</div>
-        </div>
+        <img class="book-cover-img" src="couv-tes-mots.jpg" alt="Couverture — Tes mots sont plus forts que ta peur">
         <div class="book-body">
           <div class="book-meta-mini"><span><b>100 p.</b></span><span>12 défis d'éloquence</span></div>
           <p class="book-desc">Un guide pratique et inspirant pour dépasser la peur du jugement, retrouver confiance en sa voix et oser prendre la parole avec authenticité.</p>
@@ -729,6 +776,41 @@
           <div class="book-footer">
             <div class="book-price tbd">Prix à venir</div>
             <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Tes%20mots%20sont%20plus%20forts%20que%20ta%20peur%20%C2%BB." class="btn btn-ghost btn-sm" target="_blank">Être informé(e)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card fade-up">
+        <img class="book-cover-img" src="couv-auditeur-interne.jpg" alt="Couverture — Devenir Auditeur Interne">
+        <div class="book-body">
+          <div class="book-meta-mini"><span>Pro Skills Africa</span><span>Guide pratique</span></div>
+          <p class="book-desc">Le guide pratique pour préparer, réaliser et réussir vos missions d'audit interne selon les bonnes pratiques professionnelles et les référentiels internationaux.</p>
+          <div class="book-footer">
+            <div class="book-price tbd">Prix à venir</div>
+            <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Devenir%20Auditeur%20Interne%20%C2%BB." class="btn btn-ghost btn-sm" target="_blank">Être informé(e)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card fade-up">
+        <img class="book-cover-img" src="couv-piloter-processus.jpg" alt="Couverture — Piloter les processus sans être expert ISO">
+        <div class="book-body">
+          <div class="book-meta-mini"><span>Pro Skills Africa</span><span>Édition 2025</span></div>
+          <p class="book-desc">Une approche claire, concrète et accessible du pilotage des processus pour les managers, responsables opérationnels et dirigeants qui veulent obtenir de meilleurs résultats sans être spécialistes de l'ISO — mieux comprendre les interfaces, exploiter les bonnes informations et transformer les activités en résultats durables.</p>
+          <div class="book-footer">
+            <div class="book-price tbd">Prix à venir</div>
+            <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Piloter%20les%20processus%20sans%20%C3%AAtre%20expert%20ISO%20%C2%BB." class="btn btn-ghost btn-sm" target="_blank">Être informé(e)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card fade-up">
+        <img class="book-cover-img" src="couv-tu-avais-raison.jpg" alt="Couverture — Tu avais raison... mais à quel prix ?">
+        <div class="book-body">
+          <div class="book-meta-mini"><span>À paraître</span></div>
+          <div class="book-footer">
+            <div class="book-price tbd">Prix à venir</div>
+            <a href="https://wa.me/2290195563616?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20le%20livre%20%C2%AB%20Tu%20avais%20raison...%20mais%20%C3%A0%20quel%20prix%20%3F%20%C2%BB." class="btn btn-ghost btn-sm" target="_blank">Être informé(e)</a>
           </div>
         </div>
       </div>
