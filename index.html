@@ -58,7 +58,7 @@
     padding:18px 32px;max-width:1120px;margin:0 auto;
   }
   .nav-right{display:flex;align-items:center;gap:14px;}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Parisienne',cursive;font-size:1.6rem;font-weight:400;letter-spacing:0.01em;text-decoration:none;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Parisienne',cursive;font-size:2.7rem;font-weight:400;letter-spacing:0.01em;text-decoration:none;margin-left:-14px;}
   .brand-mark{
     width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);
     display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;
@@ -287,11 +287,21 @@
     background:var(--teal);color:var(--paper);
   }
   .ifecarm .section-head p{color:rgba(237,231,217,0.75);}
+  .ifecarm{position:relative;overflow:hidden;}
+  .ifecarm::before{
+    content:'';position:absolute;top:50%;left:-40px;width:560px;height:560px;
+    background:url('logo-ifecarm.svg') no-repeat center/contain;
+    transform:translateY(-50%);opacity:0.16;
+    pointer-events:none;z-index:0;
+  }
+  .ifecarm .wrap{position:relative;z-index:1;}
+  @media(max-width:760px){.ifecarm::before{width:340px;height:340px;left:-70px;}}
   .ifecarm .section-num{color:var(--brass);}
   .ifecarm .section-num::before{background:var(--brass);}
   .ifecarm-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
   @media(max-width:760px){.ifecarm-grid{grid-template-columns:1fr;}}
   .ifecarm-grid h3{font-size:1.3rem;font-weight:500;margin:0 0 14px;}
+  .ifecarm-motto{color:var(--paper) !important;font-weight:600;font-style:italic;font-family:'Fraunces',serif;}
   .ifecarm-grid p{color:rgba(237,231,217,0.82);margin:0 0 14px;font-size:1rem;}
   .ifecarm-list{list-style:none;margin:0;padding:0;}
   .ifecarm-list li{
@@ -668,6 +678,7 @@
     <div class="ifecarm-grid">
       <div>
         <h3>Un cabinet QHSE panafricain</h3>
+        <p class="ifecarm-motto">Your safety is our aim — Votre sécurité, notre priorité</p>
         <p>IFECARM Group est un cabinet de conseil spécialisé en Qualité, Hygiène, Sécurité, Sûreté, Énergie et Environnement, basé à Cotonou avec une présence internationale (siège également à Paris, France).</p>
         <p>Au sein du groupe, j'occupe trois fonctions : <b>Directrice Générale Afrique</b>, <b>Consulting Manager</b> et <b>Directrice Expertise-Conseils & Audits (DECA)</b>. Je pilote le développement stratégique, l'expertise et l'excellence QHSE des opérations africaines, je conduis les audits et diagnostics menés pour les clients du cabinet, et je conçois et anime moi-même les formations : Lead Auditor ISO 9001, 14001 et 45001, systèmes de management intégrés, audit interne, sécurité alimentaire et bonnes pratiques d'hygiène.</p>
         <p>Le cabinet intervient au Bénin, au Togo, en Côte d'Ivoire, au Cameroun, au Sénégal, au Gabon, au Burkina Faso, au Congo, ainsi qu'en France et en Europe.</p>
