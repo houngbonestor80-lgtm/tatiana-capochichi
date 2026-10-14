@@ -4,6 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tatiana Capo-Chichi — Consultante QHSE & Capital Humain</title>
+<meta name="description" content="Tatiana Capo-Chichi, consultante senior, Lead Auditor ISO et formatrice : 23 ans d'expertise en QHSE, certification ISO et capital humain en Afrique francophone. Directrice Générale Afrique d'IFECARM GROUP.">
+<meta name="author" content="Tatiana Capo-Chichi">
+<meta name="theme-color" content="#EDE7D9">
+<link rel="canonical" href="https://tatianacapochichi.com/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Tatiana Capo-Chichi">
+<meta property="og:url" content="https://tatianacapochichi.com/">
+<meta property="og:title" content="Tatiana Capo-Chichi — Consultante QHSE & Capital Humain">
+<meta property="og:description" content="23 ans d'expertise en QHSE, audit, certification ISO et capital humain. Directrice Générale Afrique — IFECARM GROUP.">
+<meta property="og:image" content="https://tatianacapochichi.com/portrait.jpeg">
+<meta property="og:image:alt" content="Portrait de Tatiana Capo-Chichi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tatiana Capo-Chichi — Consultante QHSE & Capital Humain">
+<meta name="twitter:description" content="23 ans d'expertise en QHSE, audit, certification ISO et capital humain en Afrique francophone.">
+<meta name="twitter:image" content="https://tatianacapochichi.com/portrait.jpeg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Tatiana Capo-Chichi","url":"https://tatianacapochichi.com/","image":"https://tatianacapochichi.com/portrait.jpeg","jobTitle":"Directrice Générale Afrique","worksFor":{"@type":"Organization","name":"IFECARM GROUP","url":"https://www.ifecarm-qhse.com/"},"address":{"@type":"PostalAddress","addressLocality":"Cotonou","addressCountry":"BJ"},"email":"mailto:t.capo-chichi@ifecarm-qhse.com","sameAs":["https://www.linkedin.com/in/tatiana-capo-chichi-80a4aaa1/"],"knowsAbout":["QHSE","Audit ISO","ISO 9001","ISO 14001","ISO 45001","Ressources humaines","Formation"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Parisienne&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -406,6 +425,387 @@
     .hero h1 .word{animation:none;transform:none;}
     .timeline .t-item:first-child::before{animation:none;}
   }
+
+  /* ===== v2 : animations & finitions ===== */
+  :root{interpolate-size:allow-keywords;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  /* header compact au scroll + lien actif */
+  header{transition:box-shadow .3s ease,background .3s ease;}
+  .nav-inner{transition:padding .3s ease;}
+  .brand{transition:font-size .3s ease;}
+  header.is-scrolled{box-shadow:0 6px 20px rgba(23,32,42,0.08);background:rgba(237,231,217,0.97);}
+  header.is-scrolled .nav-inner{padding-top:10px;padding-bottom:10px;}
+  @media(min-width:481px){header.is-scrolled .brand{font-size:2.2rem;}}
+  nav a.is-active{color:var(--clay);}
+  nav a.is-active::after{right:0;}
+
+  /* rôles qui défilent dans le hero */
+  .role-rotator{display:inline-grid;overflow:hidden;vertical-align:bottom;height:1.5em;line-height:1.5em;}
+  .role-rotator span{grid-area:1/1;transform:translateY(100%);opacity:0;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .6s ease;white-space:nowrap;color:var(--clay);}
+  .role-rotator span.is-active{transform:none;opacity:1;}
+  .role-rotator span.is-leaving{transform:translateY(-100%);opacity:0;}
+
+  /* portrait dévoilé */
+  .photo-frame img{animation:unveil 1.2s cubic-bezier(.77,0,.18,1) .25s both;}
+  @keyframes unveil{from{clip-path:inset(100% 0 0 0);}to{clip-path:inset(0 0 0 0);}}
+
+  /* titres de section : mots qui montent depuis un masque */
+  .split-title .word-wrap{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.1em;margin-bottom:-0.1em;}
+  .split-title .word{display:inline-block;transform:translateY(110%);transition:transform .8s cubic-bezier(.22,1,.36,1);}
+  .is-visible .split-title .word{transform:none;}
+
+  /* bandeau des organisations */
+  .clients{padding:30px 0 34px;border-bottom:1px solid var(--line);overflow:hidden;}
+  .clients-label{font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-soft);font-weight:600;text-align:center;margin-bottom:16px;}
+  .marquee{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
+  .marquee-track{display:flex;flex-shrink:0;gap:0;animation:marquee 55s linear infinite;}
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee-track span{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--teal);white-space:nowrap;padding:0 26px;position:relative;transition:color .25s ease;}
+  .marquee-track span::after{content:'◆';position:absolute;right:-5px;top:50%;transform:translateY(-50%);font-size:0.45rem;color:var(--brass);}
+  .marquee-track span:hover{color:var(--clay);}
+  @keyframes marquee{to{transform:translateX(-100%);}}
+
+  /* missions en cartes (remplace la timeline verticale) */
+  .timeline{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-left:0;border-left:none;}
+  .timeline .t-item{--card-accent:var(--clay);background:var(--paper-2);border:1px solid var(--line);padding:24px 26px 22px;position:relative;overflow:hidden;
+    transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease;}
+  .timeline .t-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;height:auto;border:none;border-radius:0;background:var(--card-accent);
+    transform:scaleY(0);transform-origin:top;transition:transform .45s cubic-bezier(.22,1,.36,1);box-shadow:none;animation:none !important;}
+  .timeline .t-item:hover::before{transform:scaleY(1);}
+  .timeline .t-item.is-visible:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(23,32,42,0.12);border-color:transparent;}
+  .timeline .t-item:has(details),.timeline .t-item:has(> ul){grid-column:1/-1;}
+  .timeline .t-period{display:inline-block;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--card-accent);
+    background:rgba(156,59,46,0.08);padding:5px 10px;margin-bottom:14px;}
+  .timeline .t-title{transition:color .3s ease;}
+  .timeline .t-item:hover .t-title{color:var(--card-accent);}
+  .timeline .t-item details{margin-bottom:0;}
+  @media(max-width:760px){.timeline{grid-template-columns:1fr;}}
+
+  /* accordéons fluides (navigateurs récents) */
+  details::details-content{height:0;overflow:clip;transition:height .45s cubic-bezier(.22,1,.36,1),content-visibility .45s allow-discrete;}
+  details[open]::details-content{height:auto;}
+  .book-card summary::before,.t-item summary::before{transition:transform .3s ease;display:inline-block;}
+  .book-card details[open] summary::before,.t-item details[open] summary::before{transform:rotate(180deg);}
+
+  /* livres : léger effet 3D au survol */
+  .book-card{overflow:hidden;will-change:transform;}
+  .book-cover-img{transition:transform .6s cubic-bezier(.22,1,.36,1);}
+  .book-card:hover .book-cover-img{transform:scale(1.035);}
+
+  /* bouton WhatsApp flottant */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:70;width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(23,32,42,0.28);border:1px solid var(--brass);opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .35s ease,transform .35s ease,background .25s ease;}
+  .wa-float.is-shown{opacity:1;transform:none;pointer-events:auto;}
+  .wa-float:hover{background:var(--clay);}
+  .wa-float svg{width:26px;height:26px;fill:currentColor;}
+  @media(max-width:480px){.wa-float{right:16px;bottom:16px;width:50px;height:50px;}}
+
+  .to-top{color:rgba(237,231,217,0.7);text-decoration:none;transition:color .2s;}
+  .to-top:hover{color:var(--brass);}
+
+  @media(prefers-reduced-motion:reduce){
+    .photo-frame img{animation:none;}
+    .split-title .word{transform:none;transition:none;}
+    .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;}
+    .marquee{-webkit-mask-image:none;mask-image:none;}
+    .marquee-track[aria-hidden]{display:none;}
+    .role-rotator span{transition:none;}
+    details::details-content{transition:none;}
+  }
+
+  /* ===== rythme de couleurs par section ===== */
+  section,.ledger,.clients{position:relative;}
+  .section-num{color:var(--accent,var(--clay));}
+  .section-num::before{background:var(--accent,var(--clay));}
+
+  /* bandeau chiffres + organisations : beige */
+  .ledger,.clients{background:var(--paper-2);}
+  .ledger{border-bottom-color:rgba(34,32,27,0.08);}
+
+  /* 01 Profil : sable, accent sarcelle */
+  #profil{--accent:var(--teal);}
+
+  /* 02 Domaines : fond encre */
+  section.domaines{--accent:var(--brass);background:var(--ink);color:var(--paper);border-top:none;}
+  .domaines .section-head h2{color:var(--paper);}
+  .domaines .domaine-row{border-bottom-color:var(--line-dark);}
+  .domaines .section-head + .domaine-row{border-top:1px solid var(--line-dark);}
+  .domaines .domaine-row h3{color:var(--paper);}
+  .domaines .domaine-row p{color:rgba(237,231,217,0.68);}
+  .domaines .domaine-row:hover{background:rgba(237,231,217,0.06);}
+  .domaines .domaine-row:hover h3{color:var(--brass);}
+
+  /* 03 QHSE : sable, accent terre cuite (timeline d'origine) */
+  #qhse{--accent:var(--clay);}
+
+  /* 04 RH : beige, accent sarcelle */
+  #rh{--accent:var(--teal);background:var(--paper-2);}
+  #rh .timeline .t-item{--card-accent:var(--teal);background:var(--paper);}
+  #rh .timeline .t-period{background:rgba(43,65,66,0.09);}
+  #rh .timeline .t-item:first-child::before{animation:none;}
+  #rh summary::before{color:var(--teal);}
+
+  /* 05 Certifications : sable, accent laiton */
+  #certifications{--accent:var(--brass);}
+
+  /* 07 Livres : beige, cartes claires */
+  #livres{--accent:var(--clay);background:var(--paper-2);}
+  #livres .book-card{background:var(--paper);}
+
+
+  /* ===== Terrains d'intervention ===== */
+  .terrains{--accent:var(--brass);}
+  .terrain-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:230px;gap:14px;}
+  .terrain-tile{position:relative;margin:0;overflow:hidden;background:var(--ink);}
+  .terrain-tile.tile-big{grid-row:span 2;}
+  .terrain-tile.tile-wide{grid-column:span 2;}
+  .terrain-tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.92);transform:scale(1.08);transition:transform 1.4s cubic-bezier(.22,1,.36,1),filter .6s ease;}
+  .terrain-tile.is-visible img{transform:scale(1);}
+  .terrain-tile:hover img{filter:grayscale(0) contrast(1.02) brightness(.95);transform:scale(1.04);}
+  .terrain-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(23,32,42,.88) 0%,rgba(23,32,42,.25) 45%,transparent 70%);pointer-events:none;}
+  .terrain-tile figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:18px 20px;color:var(--paper);display:flex;flex-direction:column;gap:4px;}
+  .terrain-tile figcaption b{font-family:'Fraunces',serif;font-weight:500;font-size:1.12rem;line-height:1.25;}
+  .terrain-tile figcaption span{font-size:.82rem;color:rgba(237,231,217,.78);max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .4s ease;}
+  .terrain-tile:hover figcaption span,.terrain-tile:focus-within figcaption span{max-height:3em;opacity:1;}
+  .terrain-tile figcaption::before{content:'';width:26px;height:2px;background:var(--brass);margin-bottom:8px;transition:width .5s ease;}
+  .terrain-tile:hover figcaption::before{width:48px;}
+  @media(max-width:860px){.terrain-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px;}.terrain-tile.tile-big{grid-row:span 1;grid-column:span 2;}}
+  @media(max-width:520px){.terrain-grid{grid-template-columns:1fr;grid-auto-rows:210px;}.terrain-tile.tile-big,.terrain-tile.tile-wide{grid-column:auto;}.terrain-tile figcaption span{max-height:3em;opacity:1;}}
+  @media(hover:none){.terrain-tile figcaption span{max-height:3em;opacity:1;}}
+
+  /* ===== Conviction ===== */
+  .conviction{padding:96px 0;text-align:center;}
+  .conviction figure{margin:0 auto;max-width:820px;}
+  .conviction-mark{font-family:'Fraunces',serif;font-size:6rem;line-height:.6;color:var(--brass);height:48px;}
+  .conviction blockquote{margin:18px 0 26px;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.45rem,2.8vw,2.1rem);line-height:1.4;color:var(--ink);}
+  .conviction blockquote .cw{opacity:.12;transition:opacity .5s ease;}
+  .conviction blockquote .cw.on{opacity:1;}
+  .conviction figcaption{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .conviction .signature{margin-top:0;color:var(--clay);}
+  .conviction small{font-size:.8rem;color:var(--text-soft);}
+
+  /* bouton LinkedIn du hero */
+  .btn-icon{display:inline-flex;align-items:center;justify-content:center;width:47px;height:47px;border:1px solid var(--text);color:var(--text);transition:all .25s ease;}
+  .btn-icon svg{width:18px;height:18px;fill:currentColor;}
+  .btn-icon:hover{background:#0A66C2;border-color:#0A66C2;color:#fff;transform:translateY(-2px);}
+
+  @media(prefers-reduced-motion:reduce){
+    .terrain-tile img{transform:none;transition:filter .3s ease;}
+    .conviction blockquote .cw{opacity:1;}
+  }
+
+  /* ===== listes "Voir les N missions" en mini-cartes ===== */
+  .timeline .t-item details{border-top:none;padding-top:6px;}
+  .timeline .t-item summary{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 14px;margin-top:6px;border:1px solid var(--card-accent);color:var(--card-accent);
+    font-size:.82rem;letter-spacing:.02em;transition:background .25s ease,color .25s ease;}
+  .timeline .t-item summary::before{content:'+' !important;transform:none !important;font-size:1.05rem;width:auto;color:inherit;transition:transform .35s ease !important;}
+  .timeline .t-item details[open] summary::before{transform:rotate(45deg) !important;}
+  #rh .timeline .t-item summary::before{color:inherit;}
+  .timeline .t-item.span-full{grid-column:1/-1;}
+  .timeline .t-item summary:hover,.timeline .t-item details[open] summary{background:var(--card-accent);color:var(--paper);}
+  .timeline .t-item summary .sum-count{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;}
+  .timeline .t-item details > ul{grid-template-columns:repeat(3,1fr) !important;gap:12px !important;margin-top:20px;}
+  .timeline .t-item details li.mcard{background:var(--paper);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:6px;
+    font-size:.86rem;line-height:1.45;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;}
+  #rh .timeline .t-item details li.mcard{background:var(--paper-2);}
+  .timeline .t-item details li.mcard:hover{transform:translateY(-3px);border-color:var(--card-accent);box-shadow:0 10px 20px rgba(23,32,42,.08);}
+  .mcard .m-date{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--card-accent);}
+  .mcard .m-desc{color:var(--text);}
+  .mcard .m-org{color:var(--text-soft);font-size:.8rem;margin-top:auto;padding-top:6px;border-top:1px dashed var(--line);}
+  .mcard .m-num{font-family:'Fraunces',serif;font-size:2rem;line-height:1;color:var(--card-accent);font-weight:500;}
+  .mcard .m-unit{font-size:.76rem;color:var(--text-soft);margin-top:-2px;}
+  .m-total{grid-column:1/-1;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding:4px 2px 6px;color:var(--text-soft);font-size:.9rem;}
+  .m-total b{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:500;color:var(--card-accent);line-height:1;}
+  details[open] li.mcard,details[open] .m-total{animation:mIn .5s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i,0) * 45ms);}
+  @keyframes mIn{from{opacity:0;transform:translateY(14px) scale(.98);}to{opacity:1;transform:none;}}
+  @media(max-width:900px){.timeline .t-item details > ul{grid-template-columns:repeat(2,1fr) !important;}}
+  @media(max-width:520px){.timeline .t-item details > ul{grid-template-columns:1fr !important;}}
+  @media(prefers-reduced-motion:reduce){details[open] li.mcard,details[open] .m-total{animation:none;}}
+
+  /* ===== Certifications : cartes + tampon d'auditeur ===== */
+  .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:960px){.cert-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.cert-grid{grid-template-columns:1fr;}}
+  .cert-card{background:var(--paper-2);border:1px solid var(--line);padding:28px 22px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;
+    transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease;}
+  .cert-card.is-visible:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(23,32,42,.12);border-color:var(--brass);}
+  .stamp{position:relative;width:128px;height:128px;margin-bottom:18px;color:var(--brass);}
+  .stamp-ring{width:100%;height:100%;overflow:visible;}
+  .stamp-ring text{font-family:'Inter',sans-serif;font-size:8.6px;font-weight:700;letter-spacing:.06em;fill:currentColor;}
+  .stamp-ring .sr-outer{fill:none;stroke:currentColor;stroke-width:1.6;}
+  .stamp-ring .sr-inner{fill:none;stroke:currentColor;stroke-width:1;stroke-dasharray:2 3;}
+  .stamp-core{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--clay);letter-spacing:.02em;}
+  .cert-card:nth-child(2) .stamp-core{color:var(--teal);}
+  .cert-card:nth-child(3) .stamp-core{color:var(--ink);}
+  .cert-card:nth-child(4) .stamp-core{color:var(--brass);}
+  /* le tampon s'imprime à l'apparition */
+  .cert-card.fade-up .stamp{opacity:0;transform:scale(1.55) rotate(-24deg);}
+  .cert-card.is-visible .stamp{animation:stampIn .75s cubic-bezier(.3,1.4,.5,1) .25s both;}
+  @keyframes stampIn{0%{opacity:0;transform:scale(1.55) rotate(-24deg);}60%{opacity:1;transform:scale(.94) rotate(-8deg);}100%{opacity:1;transform:scale(1) rotate(-8deg);}}
+  .stamp::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid currentColor;opacity:0;pointer-events:none;}
+  .cert-card.is-visible .stamp::after{animation:inkRing .9s ease-out .7s both;}
+  @keyframes inkRing{from{opacity:.45;transform:scale(.9);}to{opacity:0;transform:scale(1.35);}}
+  /* au survol : le texte circulaire tourne */
+  .stamp-ring{animation:ringSpin 14s linear infinite;animation-play-state:paused;}
+  .cert-card:hover .stamp-ring{animation-play-state:running;}
+  @keyframes ringSpin{to{transform:rotate(360deg);}}
+  .cert-card h3{font-family:'Fraunces',serif;font-size:1.08rem;font-weight:500;line-height:1.3;margin:0 0 4px;}
+  .cert-org{margin:0 0 14px;font-size:.8rem;color:var(--text-soft);}
+  .cert-norms{list-style:none;margin:auto 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
+  .cert-norms li{font-size:.7rem;font-weight:600;letter-spacing:.03em;padding:4px 9px;border:1px solid var(--line);background:var(--paper);color:var(--text);transition:border-color .3s ease,color .3s ease;}
+  .cert-card:hover .cert-norms li{border-color:var(--brass);color:var(--ink);}
+  @media(prefers-reduced-motion:reduce){
+    .cert-card.fade-up .stamp{opacity:1;transform:rotate(-8deg);}
+    .cert-card.is-visible .stamp,.cert-card.is-visible .stamp::after{animation:none;}
+    .stamp-ring{animation:none;}
+  }
+
+  /* ===== Affiliation IFECARM ===== */
+  .ifecarm::before{content:none;}
+  @keyframes wmFloat{0%,100%{transform:translateY(-50%) rotate(0deg);}50%{transform:translateY(-54%) rotate(-4deg);}}
+  .ifc-intro{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;margin-bottom:56px;}
+  @media(max-width:860px){.ifc-intro{grid-template-columns:1fr;gap:32px;}}
+  .ifc-text h3{font-size:1.4rem;font-weight:500;margin:0 0 10px;}
+  .ifc-text p{color:rgba(237,231,217,.82);margin:0 0 14px;}
+  .ifc-text .ifecarm-motto{font-size:1.05rem;}
+  .ifc-text .ifecarm-motto span{opacity:.6;font-weight:400;}
+  .ifc-link{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:12px 20px;border:1px solid var(--brass);color:var(--paper);text-decoration:none;font-size:.88rem;font-weight:600;transition:background .25s ease,color .25s ease;}
+  .ifc-link span{transition:transform .25s ease;}
+  .ifc-link:hover{background:var(--brass);color:var(--ink);}
+  .ifc-link:hover span{transform:translate(3px,-3px);}
+
+  .ifc-map{margin:0;background:rgba(23,32,42,.28);border:1px solid var(--line-dark);padding:22px 22px 20px;}
+  .ifc-map svg{width:100%;height:auto;display:block;overflow:visible;}
+  .ifc-map .route-base{fill:none;stroke:rgba(237,231,217,.18);stroke-width:1.5;stroke-dasharray:3 5;}
+  .ifc-map .route{fill:none;stroke:var(--brass);stroke-width:2;stroke-linecap:round;stroke-dasharray:260;stroke-dashoffset:260;}
+  .ifc-map.is-visible .route{transition:stroke-dashoffset 1.6s cubic-bezier(.65,0,.35,1) .3s;stroke-dashoffset:0;}
+  .ifc-map .traveler{fill:var(--paper);opacity:0;}
+  .ifc-map.is-visible .traveler{opacity:1;transition:opacity .4s ease 1.9s;}
+  .ifc-map .node circle:last-child{fill:var(--brass);stroke:var(--teal);stroke-width:2;}
+  .ifc-map .pulse{fill:none;stroke:var(--brass);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:nodePulse 2.4s ease-out infinite;}
+  .ifc-map .node:nth-of-type(2) .pulse{animation-delay:1.2s;}
+  @keyframes nodePulse{from{opacity:.8;transform:scale(1);}to{opacity:0;transform:scale(3.2);}}
+  .ifc-map .lbl{fill:var(--paper);font-family:'Fraunces',serif;font-size:13px;}
+  .ifc-map .sub{fill:rgba(237,231,217,.5);font-family:'Inter',sans-serif;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;}
+  .ifc-map figcaption{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-dark);}
+  .ifc-cap{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(237,231,217,.55);margin-bottom:10px;}
+  .ifc-countries{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
+  .ifc-countries li{font-size:.78rem;padding:5px 10px;border:1px solid var(--line-dark);color:rgba(237,231,217,.85);opacity:0;transform:translateY(6px);}
+  .ifc-map.is-visible .ifc-countries li{animation:chipOn .5s ease both;animation-delay:calc(1.2s + var(--i) * 90ms);}
+  @keyframes chipOn{to{opacity:1;transform:none;}}
+  .ifc-countries li:hover{border-color:var(--brass);color:var(--paper);}
+
+  .ifc-roles-head{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--brass);margin-bottom:16px;}
+  .ifc-roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px;}
+  @media(max-width:860px){.ifc-roles{grid-template-columns:1fr;}}
+  .ifc-role{position:relative;padding:26px 24px 24px;background:rgba(237,231,217,.05);border:1px solid var(--line-dark);overflow:hidden;
+    transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1),background .35s ease,border-color .35s ease;}
+  .ifc-role::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.22,1,.36,1);}
+  .ifc-role.is-visible:hover{transform:translateY(-6px);background:rgba(237,231,217,.09);border-color:rgba(169,129,44,.6);}
+  .ifc-role:hover::after{transform:scaleX(1);}
+  .role-idx{font-family:'Fraunces',serif;font-size:2.4rem;line-height:1;color:rgba(169,129,44,.45);display:block;margin-bottom:12px;transition:color .35s ease;}
+  .ifc-role:hover .role-idx{color:var(--brass);}
+  .ifc-role h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.15rem;margin:0 0 8px;color:var(--paper);}
+  .ifc-role h4 small{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--brass);letter-spacing:.05em;}
+  .ifc-role p{margin:0;font-size:.92rem;color:rgba(237,231,217,.75);}
+
+  .ifc-services{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark);}
+  @media(max-width:860px){.ifc-services{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.ifc-services{grid-template-columns:1fr;}}
+  .ifc-service{padding:20px 18px 6px 0;display:flex;flex-direction:column;gap:6px;transition:opacity .7s ease,transform .7s ease;}
+  .ifc-service b{color:var(--paper);font-weight:600;font-size:.95rem;position:relative;padding-left:16px;}
+  .ifc-service b::before{content:'';position:absolute;left:0;top:.45em;width:7px;height:7px;background:var(--brass);transform:rotate(45deg);transition:transform .4s ease;}
+  .ifc-service:hover b::before{transform:rotate(225deg) scale(1.2);}
+  .ifc-service span{font-size:.86rem;color:rgba(237,231,217,.68);padding-left:16px;}
+
+  @media(prefers-reduced-motion:reduce){
+    .ifecarm::before,.ifc-map .pulse{animation:none;}
+    .ifc-map .route{stroke-dashoffset:0;}
+    .ifc-map .traveler{display:none;}
+    .ifc-countries li{opacity:1;transform:none;animation:none !important;}
+  }
+
+  /* logo IFECARM visible */
+  .ifc-brand{display:flex;align-items:center;gap:24px;margin-bottom:18px;}
+  .ifc-brand h3{margin-bottom:6px;}
+  .ifc-brand .ifecarm-motto{margin:0;}
+  .ifc-logo{flex-shrink:0;width:200px;height:200px;border-radius:50%;background:var(--paper);padding:10px;position:relative;
+    box-shadow:0 0 0 4px rgba(237,231,217,.08),0 14px 34px rgba(0,0,0,.28);transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s ease;}
+  .ifc-logo img{width:100%;height:100%;object-fit:contain;display:block;}
+  .ifc-logo::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(169,129,44,.55);pointer-events:none;}
+  .ifc-text.fade-up .ifc-logo{opacity:0;transform:scale(.7) rotate(-120deg);}
+  .ifc-text.is-visible .ifc-logo{animation:logoIn 1.1s cubic-bezier(.22,1,.36,1) .2s both;}
+  @keyframes logoIn{to{opacity:1;transform:none;}}
+  .ifc-text.is-visible .ifc-logo::after{animation:logoHalo 3.2s ease-out 1.3s infinite;}
+  @keyframes logoHalo{0%{opacity:.9;transform:scale(1);}100%{opacity:0;transform:scale(1.25);}}
+  .ifc-logo:hover{transform:scale(1.05) rotate(-6deg) !important;box-shadow:0 0 0 4px rgba(169,129,44,.35),0 18px 40px rgba(0,0,0,.32);}
+  @media(max-width:520px){.ifc-brand{flex-direction:column;align-items:flex-start;gap:18px;}.ifc-logo{width:160px;height:160px;}}
+  @media(prefers-reduced-motion:reduce){.ifc-text.fade-up .ifc-logo{opacity:1;transform:none;}.ifc-text.is-visible .ifc-logo,.ifc-text.is-visible .ifc-logo::after{animation:none;}}
+
+  /* ===== Footer ===== */
+  footer{padding:0 0 28px;overflow:hidden;position:relative;}
+  footer > .topbar{margin-bottom:76px;}
+  .foot-main{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start;}
+  @media(max-width:900px){.foot-main{grid-template-columns:1fr;gap:40px;}}
+  .foot-title{font-size:clamp(2rem,4.4vw,3.1rem) !important;line-height:1.1;margin:0 0 18px !important;}
+  .foot-title .word-wrap{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em;}
+  .foot-title .word{display:inline-block;transform:translateY(110%);transition:transform .9s cubic-bezier(.22,1,.36,1);}
+  .foot-title.is-visible .word{transform:none;}
+  .foot-intro p{margin:0 0 22px;}
+  .foot-status{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:rgba(237,231,217,.85);padding:7px 14px 7px 12px;border:1px solid var(--line-dark);border-radius:30px;margin-bottom:24px;}
+  .foot-status .dot{width:8px;height:8px;border-radius:50%;background:#5FB37A;box-shadow:0 0 0 0 rgba(95,179,122,.6);animation:dotLive 2s ease-out infinite;}
+  @keyframes dotLive{to{box-shadow:0 0 0 9px rgba(95,179,122,0);}}
+  .foot-cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-brass{background:var(--brass) !important;color:var(--ink) !important;}
+  .btn-brass span{transition:transform .25s ease;}
+  .btn-brass:hover{background:var(--paper) !important;}
+  .btn-brass:hover span{transform:translateX(4px);}
+  .btn-ghost-light{border:1px solid var(--line-dark);color:var(--paper);}
+  .btn-ghost-light:hover{border-color:#25D366;color:#25D366;transform:translateY(-2px);}
+
+  .foot-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:520px){.foot-cards{grid-template-columns:1fr;}}
+  .cc{position:relative;display:flex;align-items:center;gap:14px;padding:18px 40px 18px 16px;border:1px solid var(--line-dark);background:rgba(237,231,217,.03);
+    text-decoration:none;color:var(--paper);overflow:hidden;transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1),border-color .3s ease,background .3s ease;}
+  .cc::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(169,129,44,.16),transparent 60%);opacity:0;transition:opacity .35s ease;}
+  a.cc.is-visible:hover{border-color:var(--brass);transform:translateY(-3px);}
+  a.cc:hover::before{opacity:1;}
+  .cc-ico{flex-shrink:0;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(237,231,217,.07);color:var(--brass);transition:background .3s ease,color .3s ease;position:relative;}
+  .cc-ico svg{width:18px;height:18px;fill:currentColor;}
+  a.cc:hover .cc-ico{background:var(--brass);color:var(--ink);}
+  .cc-txt{display:flex;flex-direction:column;min-width:0;position:relative;}
+  .cc-txt small{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(237,231,217,.5);}
+  .cc-txt b{font-weight:500;font-size:.92rem;overflow-wrap:anywhere;}
+  .cc.cc-wide{grid-column:1/-1;}
+  .cc-txt em{font-style:normal;font-size:.72rem;color:rgba(237,231,217,.45);}
+  #cotonouTime{font-family:'Fraunces',serif;font-size:1.15rem;font-variant-numeric:tabular-nums;}
+  .cc-arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:rgba(237,231,217,.35);transition:transform .3s ease,color .3s ease;}
+  a.cc:hover .cc-arrow{color:var(--brass);transform:translate(3px,calc(-50% - 3px));}
+
+  .foot-wordmark{margin-top:64px;text-align:center;line-height:.9;pointer-events:none;user-select:none;}
+  .foot-wordmark span{display:inline-block;font-family:'Parisienne',cursive;font-size:clamp(2.6rem,11vw,9rem);white-space:nowrap;padding:0 .2em;color:transparent;
+    background:linear-gradient(90deg,rgba(169,129,44,.12),rgba(169,129,44,.42),rgba(169,129,44,.12));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;
+    transform:translateY(40%);opacity:0;transition:transform 1.4s cubic-bezier(.22,1,.36,1),opacity 1.2s ease;animation:shimmer 8s linear infinite;}
+  .foot-wordmark.is-in span{transform:none;opacity:1;}
+  @keyframes shimmer{to{background-position:-200% 0;}}
+
+  .foot-bottom{margin-top:18px !important;align-items:center;}
+  .fb-brand{display:flex;align-items:center;gap:10px;}
+  .fb-nav{display:flex;gap:18px;flex-wrap:wrap;}
+  .fb-nav a{color:rgba(237,231,217,.55);text-decoration:none;transition:color .2s;}
+  .fb-nav a:hover{color:var(--brass);}
+  .to-top{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-dark);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;}
+  .to-top span{display:inline-block;transition:transform .35s ease;}
+  .to-top:hover{border-color:var(--brass);}
+  .to-top:hover span{animation:arrowUp .5s ease;}
+  @keyframes arrowUp{0%{transform:none;}49%{transform:translateY(-140%);}50%{transform:translateY(140%);}100%{transform:none;}}
+  @media(max-width:700px){.foot-bottom{flex-direction:column;align-items:flex-start;gap:14px;}}
+
+  @media(prefers-reduced-motion:reduce){
+    .foot-title .word{transform:none;transition:none;}
+    .foot-status .dot,.foot-wordmark span{animation:none;}
+    .foot-wordmark span{transform:none;opacity:1;}
+  }
 </style>
 </head>
 <body>
@@ -436,12 +836,13 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="reveal">
-      <div class="hero-kicker">Consultante Senior · Auditrice · Formatrice</div>
+      <div class="hero-kicker"><span class="sr-only">Consultante Senior · Auditrice · Formatrice · Coach · Autrice</span><span aria-hidden="true">Consultante Senior · <span class="role-rotator"><span class="is-active">Auditrice</span><span>Formatrice</span><span>Coach</span><span>Autrice</span></span></span></div>
       <h1 id="heroTitle">Faire de la conformité un langage commun, pas une contrainte.</h1>
       <p class="hero-role">23 ans à accompagner des organisations d'Afrique francophone en <strong>QHSE, audit et certification ISO</strong>, et en <strong>capital humain</strong> — de l'analyse des risques à la structuration des équipes.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-primary">Me contacter</a>
         <a href="#livres" class="btn btn-ghost">Découvrir mes livres</a>
+        <a href="https://www.linkedin.com/in/tatiana-capo-chichi-80a4aaa1/" class="btn-icon" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Tatiana Capo-Chichi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
       </div>
     </div>
     <div class="photo-frame reveal">
@@ -457,10 +858,18 @@
 
 <div class="ledger">
   <div class="wrap ledger-grid">
-    <div class="ledger-item fade-up"><div class="ledger-num" data-count="23" data-suffix=" ans">0 ans</div><div class="ledger-label">d'expérience professionnelle</div></div>
-    <div class="ledger-item fade-up"><div class="ledger-num" data-count="20" data-suffix="+">0+</div><div class="ledger-label">missions d'audit QSE / ISO</div></div>
-    <div class="ledger-item fade-up"><div class="ledger-num" data-count="5" data-suffix=" pays">0 pays</div><div class="ledger-label">Bénin, Togo, Côte d'Ivoire, Burkina Faso, Congo</div></div>
-    <div class="ledger-item fade-up"><div class="ledger-num" data-count="2" data-suffix="">0</div><div class="ledger-label">expertises : QHSE & Capital humain</div></div>
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="23" data-suffix=" ans">23 ans</div><div class="ledger-label">d'expérience professionnelle</div></div>
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="20" data-suffix="+">20+</div><div class="ledger-label">missions d'audit QSE / ISO</div></div>
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="5" data-suffix=" pays">5 pays</div><div class="ledger-label">Bénin, Togo, Côte d'Ivoire, Burkina Faso, Congo</div></div>
+    <div class="ledger-item fade-up"><div class="ledger-num" data-count="780" data-suffix="+">780+</div><div class="ledger-label">profils recrutés pour des programmes internationaux</div></div>
+  </div>
+</div>
+
+<div class="clients fade-up">
+  <div class="clients-label">Organisations et programmes accompagnés</div>
+  <div class="marquee">
+    <div class="marquee-track"><span>OFMAS International</span><span>Bouygues Bénin</span><span>Port autonome de Cotonou</span><span>ORYX Bénin</span><span>LONAB</span><span>Banque mondiale</span><span>UNFPA</span><span>OMS</span><span>Enabel</span><span>FIDA</span><span>Union européenne</span><span>MCA Bénin</span><span>Johns Hopkins University</span><span>Groupe Mega Label</span><span>Intexpert Engineering</span><span>Kékéli Efficient Power</span><span>FGA Bénin</span><span>PNLP Bénin</span></div>
+    <div class="marquee-track" aria-hidden="true"><span>OFMAS International</span><span>Bouygues Bénin</span><span>Port autonome de Cotonou</span><span>ORYX Bénin</span><span>LONAB</span><span>Banque mondiale</span><span>UNFPA</span><span>OMS</span><span>Enabel</span><span>FIDA</span><span>Union européenne</span><span>MCA Bénin</span><span>Johns Hopkins University</span><span>Groupe Mega Label</span><span>Intexpert Engineering</span><span>Kékéli Efficient Power</span><span>FGA Bénin</span><span>PNLP Bénin</span></div>
   </div>
 </div>
 
@@ -507,10 +916,46 @@
   </div>
 </section>
 
+<section id="terrains" class="terrains">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div class="section-num">03 — Terrains d'intervention</div>
+      <h2>Des secteurs exigeants, une même rigueur</h2>
+      <p>Industrie, énergie, agroalimentaire, services, institutions : la méthode reste la même, l'adaptation au terrain fait la différence.</p>
+    </div>
+    <div class="terrain-grid">
+      <figure class="terrain-tile tile-big fade-up">
+        <img src="https://images.unsplash.com/photo-1786532852011-443cba5dc9fe?auto=format&fit=crop&w=1200&q=70" alt="Raffinerie et réservoirs de stockage au coucher du soleil" loading="lazy" decoding="async">
+        <figcaption><b>Industrie & énergie</b><span>Audits réglementaires, conformité environnementale et sécurité des sites</span></figcaption>
+      </figure>
+      <figure class="terrain-tile  fade-up">
+        <img src="https://images.unsplash.com/photo-1773844389459-110d2b5e18e2?auto=format&fit=crop&w=800&q=70" alt="Deux femmes en casque et tenue de travail" loading="lazy" decoding="async">
+        <figcaption><b>Santé & sécurité au travail</b><span>ISO 45001, prévention des risques, culture sécurité</span></figcaption>
+      </figure>
+      <figure class="terrain-tile  fade-up">
+        <img src="https://images.unsplash.com/photo-1668600418844-5b3d2e381e10?auto=format&fit=crop&w=800&q=70" alt="Opératrice en blouse et gants nettoyant une surface en inox" loading="lazy" decoding="async">
+        <figcaption><b>Agroalimentaire & hygiène</b><span>Bonnes pratiques d'hygiène, sécurité des aliments</span></figcaption>
+      </figure>
+      <figure class="terrain-tile  fade-up">
+        <img src="https://images.unsplash.com/photo-1776039230119-6e69e241512d?auto=format&fit=crop&w=800&q=70" alt="Femme animant une présentation devant un public" loading="lazy" decoding="async">
+        <figcaption><b>Formation & transfert de compétences</b><span>Lead Auditor, audit interne, simulations</span></figcaption>
+      </figure>
+      <figure class="terrain-tile  fade-up">
+        <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=800&q=70" alt="Équipe en réunion de travail autour d'une table" loading="lazy" decoding="async">
+        <figcaption><b>Capital humain & organisation</b><span>Audit RH, procédures, recrutement</span></figcaption>
+      </figure>
+      <figure class="terrain-tile tile-wide fade-up">
+        <img src="https://images.unsplash.com/photo-1573167627769-e201a7ddf409?auto=format&fit=crop&w=1200&q=70" alt="Échange professionnel entre trois femmes autour d'une table" loading="lazy" decoding="async">
+        <figcaption><b>Coaching & accompagnement des dirigeants</b><span>Leadership, conduite du changement, pilotage par indicateurs</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section id="qhse">
   <div class="wrap">
     <div class="section-head fade-up">
-      <div class="section-num">03 — Volet QHSE</div>
+      <div class="section-num">04 — Volet QHSE</div>
       <h2>Audit, conseil, certification, conformité</h2>
     </div>
     <p class="volet-positioning">Pilotage de démarches de certification et de systèmes de management intégrés QSE ; audits de conformité, diagnostics, audits internes et à blanc ; structuration des processus et traitement des non-conformités ; conception et animation de formations ISO, audit et sécurité alimentaire.</p>
@@ -592,7 +1037,7 @@
 <section id="rh">
   <div class="wrap">
     <div class="section-head fade-up">
-      <div class="section-num">04 — Volet Ressources Humaines</div>
+      <div class="section-num">05 — Volet Ressources Humaines</div>
       <h2>Audit organisationnel & structuration RH</h2>
     </div>
     <p class="volet-positioning">Audit des systèmes de management des ressources humaines et diagnostic organisationnel ; formalisation des procédures administratives et RH ; pilotage de la performance par indicateurs ; accompagnement des dirigeants et coaching individuel.</p>
@@ -661,14 +1106,47 @@
 <section id="certifications">
   <div class="wrap">
     <div class="section-head fade-up">
-      <div class="section-num">05 — Certifications</div>
+      <div class="section-num">06 — Certifications</div>
       <h2>Qualifications professionnelles</h2>
+      <p>Des certifications délivrées par des organismes reconnus, au service d'audits et de formations alignés sur les référentiels internationaux.</p>
     </div>
-    <div class="cert-row">
-      <div class="seal fade-up"><div class="seal-ring"><span>Lead Auditor</span></div><div class="seal-ribbon"></div><p>ISO 9001 · 14001 · 45001 · 21001 — PECB International</p></div>
-      <div class="seal fade-up"><div class="seal-ring"><span>Formatrice QSSE</span></div><div class="seal-ribbon"></div><p>ISO 9001 · 14001 · 45001 — PECB International</p></div>
-      <div class="seal fade-up"><div class="seal-ring"><span>Auditrice interne</span></div><div class="seal-ribbon"></div><p>ISO 19011:2018 — Best Conseils</p></div>
-      <div class="seal fade-up"><div class="seal-ring"><span>Master RH</span></div><div class="seal-ribbon"></div><p>Management des Ressources Humaines</p></div>
+    <div class="cert-grid">
+      <article class="cert-card fade-up">
+        <div class="stamp" aria-hidden="true">
+          <svg class="stamp-ring" viewBox="0 0 120 120"><defs><path id="cp0" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs><circle cx="60" cy="60" r="57" class="sr-outer"/><circle cx="60" cy="60" r="38" class="sr-inner"/><text><textPath href="#cp0" textLength="292" lengthAdjust="spacing">PECB INTERNATIONAL • LEAD AUDITOR • </textPath></text></svg>
+          <span class="stamp-core">LA</span>
+        </div>
+        <h3>Lead Auditor ISO</h3>
+        <p class="cert-org">PECB International</p>
+        <ul class="cert-norms"><li>ISO 9001</li><li>ISO 14001</li><li>ISO 45001</li><li>ISO 21001</li></ul>
+      </article>
+      <article class="cert-card fade-up">
+        <div class="stamp" aria-hidden="true">
+          <svg class="stamp-ring" viewBox="0 0 120 120"><defs><path id="cp1" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs><circle cx="60" cy="60" r="57" class="sr-outer"/><circle cx="60" cy="60" r="38" class="sr-inner"/><text><textPath href="#cp1" textLength="292" lengthAdjust="spacing">PECB INTERNATIONAL • TRAINER • </textPath></text></svg>
+          <span class="stamp-core">FQ</span>
+        </div>
+        <h3>Formatrice certifiée QSSE</h3>
+        <p class="cert-org">PECB International</p>
+        <ul class="cert-norms"><li>ISO 9001</li><li>ISO 14001</li><li>ISO 45001</li></ul>
+      </article>
+      <article class="cert-card fade-up">
+        <div class="stamp" aria-hidden="true">
+          <svg class="stamp-ring" viewBox="0 0 120 120"><defs><path id="cp2" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs><circle cx="60" cy="60" r="57" class="sr-outer"/><circle cx="60" cy="60" r="38" class="sr-inner"/><text><textPath href="#cp2" textLength="292" lengthAdjust="spacing">BEST CONSEILS • AUDIT INTERNE • </textPath></text></svg>
+          <span class="stamp-core">AI</span>
+        </div>
+        <h3>Auditrice interne</h3>
+        <p class="cert-org">Best Conseils</p>
+        <ul class="cert-norms"><li>ISO 19011:2018</li></ul>
+      </article>
+      <article class="cert-card fade-up">
+        <div class="stamp" aria-hidden="true">
+          <svg class="stamp-ring" viewBox="0 0 120 120"><defs><path id="cp3" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs><circle cx="60" cy="60" r="57" class="sr-outer"/><circle cx="60" cy="60" r="38" class="sr-inner"/><text><textPath href="#cp3" textLength="292" lengthAdjust="spacing">DIPLÔME • RESSOURCES HUMAINES • </textPath></text></svg>
+          <span class="stamp-core">M</span>
+        </div>
+        <h3>Master en Management des Ressources Humaines</h3>
+        <p class="cert-org">Diplôme universitaire</p>
+        <ul class="cert-norms"><li>Capital humain</li><li>Organisation</li></ul>
+      </article>
     </div>
   </div>
 </section>
@@ -676,23 +1154,66 @@
 <section id="ifecarm" class="ifecarm">
   <div class="wrap">
     <div class="section-head fade-up">
-      <div class="section-num">06 — Affiliation</div>
+      <div class="section-num">07 — Affiliation</div>
       <h2>Directrice Générale Afrique — IFECARM GROUP</h2>
     </div>
-    <div class="ifecarm-grid">
-      <div>
-        <h3>Un cabinet QHSE panafricain</h3>
-        <p class="ifecarm-motto">Your safety is our aim — Votre sécurité, notre priorité</p>
+    <div class="ifc-intro">
+      <div class="ifc-text fade-up">
+        <div class="ifc-brand">
+          <div class="ifc-logo">
+            <picture><source srcset="logo-ifecarm-couleur.webp" type="image/webp"><img src="logo-ifecarm-couleur.png" alt="Logo IFECARM GROUP — QHSE Risk Management" width="640" height="621" loading="lazy"></picture>
+          </div>
+          <div>
+            <h3>Un cabinet QHSE panafricain</h3>
+            <p class="ifecarm-motto">Votre sécurité, notre priorité — <span lang="en">Your safety is our aim</span></p>
+          </div>
+        </div>
         <p>IFECARM Group est un cabinet de conseil spécialisé en Qualité, Hygiène, Sécurité, Sûreté, Énergie et Environnement, basé à Cotonou avec une présence internationale (siège également à Paris, France).</p>
-        <p>Au sein du groupe, j'occupe trois fonctions : <b>Directrice Générale Afrique</b>, <b>Consulting Manager</b> et <b>Directrice Expertise-Conseils & Audits (DECA)</b>. Je pilote le développement stratégique, l'expertise et l'excellence QHSE des opérations africaines, je conduis les audits et diagnostics menés pour les clients du cabinet, et je conçois et anime moi-même les formations : Lead Auditor ISO 9001, 14001 et 45001, systèmes de management intégrés, audit interne, sécurité alimentaire et bonnes pratiques d'hygiène.</p>
-        <p>Le cabinet intervient au Bénin, au Togo, en Côte d'Ivoire, au Cameroun, au Sénégal, au Gabon, au Burkina Faso, au Congo, ainsi qu'en France et en Europe.</p>
+        <a class="ifc-link" href="https://www.ifecarm-qhse.com/" target="_blank" rel="noopener">Découvrir le cabinet <span aria-hidden="true">↗</span></a>
       </div>
-      <ul class="ifecarm-list">
-        <li><b>Ingénierie & audits QHSE</b> — diagnostics, audits internes et réglementaires</li>
-        <li><b>Formation & transfert de compétences</b> — SST, incendie/SSIAP, habilitations électriques, ATEX, CACES, référent HSE</li>
-        <li><b>Certification ISO</b> — 9001, 14001, 45001, 22000, 50001</li>
-        <li><b>Conseil RH & performance</b> — gestion de crise, plan de continuité d'activité</li>
-      </ul>
+      <figure class="ifc-map fade-up">
+        <svg viewBox="0 0 320 170" role="img" aria-label="Liaison entre Cotonou et Paris">
+          <path class="route-base" d="M80,138 C110,60 190,30 248,40"/>
+          <path id="ifcRoute" class="route" d="M80,138 C110,60 190,30 248,40"/>
+          <circle class="traveler" r="3.2"><animateMotion dur="3.6s" repeatCount="indefinite" rotate="auto"><mpath href="#ifcRoute"/></animateMotion></circle>
+          <g class="node"><circle class="pulse" cx="80" cy="138" r="6"/><circle cx="80" cy="138" r="5"/></g>
+          <g class="node"><circle class="pulse" cx="248" cy="40" r="6"/><circle cx="248" cy="40" r="5"/></g>
+          <text x="80" y="160" text-anchor="middle" class="lbl">Cotonou</text>
+          <text x="80" y="122" text-anchor="end" dx="-12" class="sub">Afrique</text>
+          <text x="248" y="24" text-anchor="middle" class="lbl">Paris</text>
+          <text x="262" y="56" class="sub">Europe</text>
+        </svg>
+        <figcaption>
+          <span class="ifc-cap">Le cabinet intervient dans</span>
+          <ul class="ifc-countries"><li style="--i:0">Bénin</li><li style="--i:1">Togo</li><li style="--i:2">Côte d'Ivoire</li><li style="--i:3">Cameroun</li><li style="--i:4">Sénégal</li><li style="--i:5">Gabon</li><li style="--i:6">Burkina Faso</li><li style="--i:7">Congo</li><li style="--i:8">France</li></ul>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="ifc-roles-head fade-up">Au sein du groupe, j'occupe trois fonctions</div>
+    <div class="ifc-roles">
+      <article class="ifc-role fade-up">
+        <span class="role-idx">01</span>
+        <h4>Directrice Générale Afrique</h4>
+        <p>Je pilote le développement stratégique, l'expertise et l'excellence QHSE des opérations africaines du groupe.</p>
+      </article>
+      <article class="ifc-role fade-up">
+        <span class="role-idx">02</span>
+        <h4>Consulting Manager</h4>
+        <p>Je conduis les audits et diagnostics menés pour les clients du cabinet.</p>
+      </article>
+      <article class="ifc-role fade-up">
+        <span class="role-idx">03</span>
+        <h4>Directrice Expertise-Conseils &amp; Audits <small>(DECA)</small></h4>
+        <p>Je conçois et anime moi-même les formations : Lead Auditor ISO 9001, 14001 et 45001, systèmes de management intégrés, audit interne, sécurité alimentaire et bonnes pratiques d'hygiène.</p>
+      </article>
+    </div>
+
+    <div class="ifc-services">
+      <div class="ifc-service fade-up"><b>Ingénierie &amp; audits QHSE</b><span>Diagnostics, audits internes et réglementaires</span></div>
+      <div class="ifc-service fade-up"><b>Formation &amp; transfert de compétences</b><span>SST, incendie/SSIAP, habilitations électriques, ATEX, CACES, référent HSE</span></div>
+      <div class="ifc-service fade-up"><b>Certification ISO</b><span>9001, 14001, 45001, 22000, 50001</span></div>
+      <div class="ifc-service fade-up"><b>Conseil RH &amp; performance</b><span>Gestion de crise, plan de continuité d'activité</span></div>
     </div>
   </div>
 </section>
@@ -700,7 +1221,7 @@
 <section id="livres">
   <div class="wrap">
     <div class="section-head fade-up">
-      <div class="section-num">07 — Livres</div>
+      <div class="section-num">08 — Livres</div>
       <h2>Écrits pour transmettre ce que le terrain m'a appris</h2>
       <p>Des guides pratiques et des récits ancrés dans le quotidien professionnel africain — à lire, appliquer et partager en équipe.</p>
     </div>
@@ -834,29 +1355,51 @@
   </div>
 </section>
 
+<section class="conviction">
+  <div class="wrap">
+    <figure class="fade-up">
+      <div class="conviction-mark" aria-hidden="true">“</div>
+      <blockquote id="convictionText">Une norme ne change rien tant qu'elle reste sur le papier. Ce sont les femmes et les hommes qui la font vivre : faire grandir les personnes, c'est faire grandir les organisations.</blockquote>
+      <figcaption><span class="signature">Tatiana Capo-Chichi</span><small>Consultante Senior · Directrice Générale Afrique, IFECARM GROUP</small></figcaption>
+    </figure>
+  </div>
+</section>
+
 <footer id="contact">
   <div class="topbar"><span></span><span></span><span></span></div>
-  <div class="wrap footer-grid">
-    <div>
-      <div class="section-num">08 — Contact</div>
-      <h2>Discutons de votre projet</h2>
-      <p>Certification ISO, audit QHSE, structuration RH, formation d'équipes et montée en compétences, teambuilding — je suis disponible pour des missions au Bénin et dans la sous-région.</p>
-      <a href="mailto:tatianacapochichi2013@gmail.com" class="btn btn-primary" style="margin-top:22px;background:var(--brass);">Écrire un email</a>
-      <div class="signature">Tatiana Capo-Chichi</div>
+  <div class="wrap foot-main">
+    <div class="foot-intro">
+      <div class="section-num fade-up">09 — Contact</div>
+      <h2 class="foot-title fade-up" id="footTitle">Discutons de votre projet</h2>
+      <p class="fade-up">Certification ISO, audit QHSE, structuration RH, formation d'équipes et montée en compétences, teambuilding — je suis disponible pour des missions au Bénin et dans la sous-région.</p>
+      <div class="foot-status fade-up"><span class="dot" aria-hidden="true"></span>Disponible pour de nouvelles missions</div>
+      <div class="foot-cta fade-up">
+        <a href="mailto:t.capo-chichi@ifecarm-qhse.com" class="btn btn-primary btn-brass">Écrire un email <span aria-hidden="true">→</span></a>
+        <a href="https://wa.me/2290195563616" class="btn btn-ghost-light" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
-    <ul class="contact-list">
-      <li>Téléphone — <a href="tel:+22901666161586">+229 01 66 61 61 58</a></li>
-      <li>WhatsApp — <a href="https://wa.me/2290195563616">+229 01 95 56 36 16</a></li>
-      <li>Email — <a href="mailto:tatianacapochichi2013@gmail.com">tatianacapochichi2013@gmail.com</a></li>
-      <li>Email (IFECARM) — <a href="mailto:t.capo-chichi@ifecarm-qhse.com">t.capo-chichi@ifecarm-qhse.com</a></li>
-      <li>Localisation — Cotonou, Bénin</li>
-    </ul>
+    <div class="foot-cards">
+      <a class="cc fade-up" href="tel:+2290166616158"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span><span class="cc-txt"><small>Téléphone</small><b>+229 01 66 61 61 58</b></span><span class="cc-arrow" aria-hidden="true">↗</span></a>
+      <a class="cc fade-up" href="https://wa.me/2290195563616" target="_blank" rel="noopener"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 13.9c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></span><span class="cc-txt"><small>WhatsApp</small><b>+229 01 95 56 36 16</b></span><span class="cc-arrow" aria-hidden="true">↗</span></a>
+      <a class="cc cc-wide fade-up" href="mailto:tatianacapochichi2013@gmail.com"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 7.1L4.2 7v.1L12 12.5l7.8-5.4V7L12 12.1z"/></svg></span><span class="cc-txt"><small>Email</small><b>tatianacapochichi2013@gmail.com</b></span><span class="cc-arrow" aria-hidden="true">↗</span></a>
+      <a class="cc cc-wide fade-up" href="mailto:t.capo-chichi@ifecarm-qhse.com"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 7.1L4.2 7v.1L12 12.5l7.8-5.4V7L12 12.1z"/></svg></span><span class="cc-txt"><small>Email IFECARM</small><b>t.capo-chichi@ifecarm-qhse.com</b></span><span class="cc-arrow" aria-hidden="true">↗</span></a>
+      <a class="cc fade-up" href="https://www.linkedin.com/in/tatiana-capo-chichi-80a4aaa1/" target="_blank" rel="noopener"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.5-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4z"/></svg></span><span class="cc-txt"><small>LinkedIn</small><b>Tatiana Capo-Chichi</b></span><span class="cc-arrow" aria-hidden="true">↗</span></a>
+      <div class="cc cc-static fade-up"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span><span class="cc-txt"><small>Cotonou, Bénin</small><b><span id="cotonouTime">—</span></b><em>heure locale (GMT+1)</em></span></div>
+    </div>
   </div>
+  <div class="foot-wordmark" aria-hidden="true"><span>Tatiana Capo-Chichi</span></div>
   <div class="wrap foot-bottom">
-    <span><span class="brand-mark" style="width:26px;height:26px;font-size:0.62rem;">TC</span> © 2026 Tatiana Capo-Chichi</span>
-    <span>Directrice Générale Afrique — IFECARM GROUP</span>
+    <span class="fb-brand"><span class="brand-mark" style="width:26px;height:26px;font-size:0.62rem;">TC</span> © 2026 Tatiana Capo-Chichi · Directrice Générale Afrique — IFECARM GROUP</span>
+    <nav class="fb-nav" aria-label="Liens de pied de page">
+      <a href="#profil">Profil</a><a href="#qhse">QHSE</a><a href="#rh">RH</a><a href="#livres">Livres</a>
+    </nav>
+    <a href="#" class="to-top" aria-label="Retour en haut"><span>↑</span></a>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/2290195563616" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36a9.43 9.43 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44 2.52 0 4.89.99 6.67 2.77a9.37 9.37 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.04.69C5.77.69.67 5.79.67 12.06c0 2 .52 3.96 1.52 5.69L.57 23.65l6.03-1.58a11.34 11.34 0 0 0 5.43 1.38h.01c6.27 0 11.37-5.1 11.37-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>
+</a>
 
 <script>
   (function(){
@@ -959,6 +1502,201 @@
       });
     }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
     items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    /* compteurs : on part de 0 seulement si l'animation va tourner (le HTML garde les vraies valeurs) */
+    if(!reduce && 'IntersectionObserver' in window){
+      document.querySelectorAll('.ledger-num[data-count]').forEach(function(n){
+        n.textContent = '0' + (n.getAttribute('data-suffix') || '');
+      });
+    }
+
+    /* titres de section découpés en mots */
+    if(!reduce){
+      document.querySelectorAll('.section-head h2').forEach(function(h){
+        var words = h.textContent.trim().split(/\s+/);
+        h.setAttribute('aria-label', h.textContent.trim());
+        h.innerHTML = words.map(function(w, i){
+          return '<span class="word-wrap" aria-hidden="true"><span class="word" style="transition-delay:' + (120 + i * 55) + 'ms">' + w + '</span></span>';
+        }).join(' ');
+        h.classList.add('split-title');
+      });
+    }
+
+    /* une fois apparus, les éléments réagissent au survol sans délai */
+    document.querySelectorAll('.fade-up').forEach(function(el){
+      el.addEventListener('transitionend', function(e){ if(e.target === el && e.propertyName === 'opacity') el.style.transitionDelay = ''; });
+    });
+
+    /* rôles rotatifs */
+    var rot = document.querySelector('.role-rotator');
+    if(rot && !reduce){
+      var items = rot.querySelectorAll('span'), i = 0;
+      setInterval(function(){
+        var cur = items[i];
+        i = (i + 1) % items.length;
+        cur.classList.remove('is-active'); cur.classList.add('is-leaving');
+        items[i].classList.remove('is-leaving'); items[i].classList.add('is-active');
+        setTimeout(function(){ cur.classList.remove('is-leaving'); }, 650);
+      }, 2600);
+    }
+
+    /* header compact, WhatsApp flottant, timeline dessinée */
+    var header = document.querySelector('header');
+    var wa = document.querySelector('.wa-float');
+    var hero = document.querySelector('.hero');
+
+    var ticking = false;
+    function onScroll(){
+      var y = window.scrollY;
+      if(header) header.classList.toggle('is-scrolled', y > 40);
+      if(wa && hero){ var foot = document.getElementById('contact'); var nearFoot = foot && foot.getBoundingClientRect().top < window.innerHeight * 0.85; wa.classList.toggle('is-shown', y > hero.offsetHeight * 0.8 && !nearFoot); }
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
+    window.addEventListener('resize', onScroll);
+    onScroll();
+
+    /* lien actif dans le menu (scrollspy) */
+    var links = {};
+    document.querySelectorAll('nav a[href^="#"]').forEach(function(a){ links[a.getAttribute('href').slice(1)] = a; });
+    if('IntersectionObserver' in window){
+      var spy = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting && links[e.target.id]){
+            Object.keys(links).forEach(function(k){ links[k].classList.remove('is-active'); });
+            links[e.target.id].classList.add('is-active');
+          }
+        });
+      }, {rootMargin:'-45% 0px -50% 0px'});
+      Object.keys(links).forEach(function(id){ var s = document.getElementById(id); if(s) spy.observe(s); });
+    }
+
+    /* livres : inclinaison 3D légère qui suit la souris */
+    if(finePointer && !reduce){
+      document.querySelectorAll('.book-card').forEach(function(card){
+        card.addEventListener('mousemove', function(e){
+          var r = card.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transition = 'transform .12s ease-out, box-shadow .3s ease';
+          card.style.transform = 'perspective(1000px) translateY(-6px) rotateX(' + (-y * 4).toFixed(2) + 'deg) rotateY(' + (x * 5).toFixed(2) + 'deg)';
+        });
+        card.addEventListener('mouseleave', function(){
+          card.style.transition = 'transform .5s cubic-bezier(.22,1,.36,1), box-shadow .3s ease';
+          card.style.transform = '';
+        });
+      });
+    }
+  })();
+</script>
+<script>
+  (function(){
+    /* citation : les mots s'allument au fil du scroll */
+    var q = document.getElementById('convictionText');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!q || reduce) return;
+    var words = q.textContent.trim().split(/\s+/);
+    q.setAttribute('aria-label', q.textContent.trim());
+    q.innerHTML = words.map(function(w){ return '<span class="cw" aria-hidden="true">' + w + '</span>'; }).join(' ');
+    var spans = q.querySelectorAll('.cw'), ticking = false;
+    function upd(){
+      var r = q.getBoundingClientRect(), vh = window.innerHeight;
+      var p = Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (vh * 0.5)));
+      var n = Math.round(p * spans.length);
+      spans.forEach(function(s, i){ s.classList.toggle('on', i < n); });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(upd); ticking = true; } }, {passive:true});
+    upd();
+  })();
+</script>
+<script>
+  (function(){
+    /* évite une carte seule sur sa ligne : elle prend toute la largeur */
+    document.querySelectorAll('.timeline').forEach(function(t){
+      var col = 0, prev = null;
+      t.querySelectorAll(':scope > .t-item').forEach(function(it){
+        var full = it.querySelector(':scope > details, :scope > ul');
+        if(full){ if(col === 1 && prev) prev.classList.add('span-full'); col = 0; }
+        else { col = (col + 1) % 2; }
+        prev = it;
+      });
+      if(col === 1 && prev) prev.classList.add('span-full');
+    });
+
+    /* transforme les listes de missions en mini-cartes */
+    document.querySelectorAll('.timeline .t-item details').forEach(function(d){
+      var list = d.querySelector(':scope > ul');
+      var sum = d.querySelector('summary');
+      if(!list || !sum) return;
+      var items = list.querySelectorAll(':scope > li');
+      var total = 0, isRecruit = false;
+      items.forEach(function(li, i){
+        var b = li.querySelector('b');
+        var date = b ? b.textContent.trim() : '';
+        var rest = li.textContent.replace(date, '').replace(/^\s*—\s*/, '').trim();
+        var parts = rest.split(/\s+—\s+/);
+        var m = rest.match(/(\d+)\s+(agents?|postes?)/i);
+        var html = '<span class="m-date">' + date + '</span>';
+        if(m){
+          isRecruit = true; total += parseInt(m[1], 10);
+          var unit = /poste/i.test(m[2]) ? 'postes pourvus' : (/superviseur/i.test(rest) ? 'agents et superviseurs' : 'agents recrutés');
+          html += '<span class="m-num">' + m[1] + '</span><span class="m-unit">' + unit + '</span>' +
+                  '<span class="m-org">' + parts[0] + '</span>';
+        } else {
+          var org = parts.length > 1 ? parts.pop() : '';
+          html += '<span class="m-desc">' + parts.join(' — ') + '</span>' + (org ? '<span class="m-org">' + org + '</span>' : '');
+        }
+        li.innerHTML = html;
+        li.className = 'mcard';
+        li.style.setProperty('--i', i + 1);
+      });
+      var n = items.length;
+      sum.innerHTML = 'Voir les <span class="sum-count">' + n + '</span> missions';
+      if(isRecruit){
+        var t = document.createElement('li');
+        t.className = 'm-total'; t.setAttribute('role','presentation');
+        t.innerHTML = '<b>' + total + '</b> profils recrutés et présélectionnés sur ' + n + ' missions, pour des programmes financés par des bailleurs internationaux';
+        list.insertBefore(t, list.firstChild);
+      }
+      d.addEventListener('toggle', function(){
+        var lbl = d.open ? 'Masquer les ' : 'Voir les ';
+        sum.innerHTML = lbl + '<span class="sum-count">' + n + '</span> missions';
+      });
+    });
+  })();
+</script>
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* titre du footer mot par mot */
+    var t = document.getElementById('footTitle');
+    if(t && !reduce){
+      var txt = t.textContent.trim();
+      t.setAttribute('aria-label', txt);
+      t.innerHTML = txt.split(/\s+/).map(function(w, i){
+        return '<span class="word-wrap" aria-hidden="true"><span class="word" style="transition-delay:' + (i * 70) + 'ms">' + w + '</span></span>';
+      }).join(' ');
+    }
+    /* grande signature qui monte à l'arrivée en bas de page */
+    var wm = document.querySelector('.foot-wordmark');
+    if(wm && 'IntersectionObserver' in window){
+      new IntersectionObserver(function(es, o){ es.forEach(function(e){ if(e.isIntersecting){ wm.classList.add('is-in'); o.disconnect(); } }); }, {threshold:.2}).observe(wm);
+    } else if(wm){ wm.classList.add('is-in'); }
+    /* heure locale de Cotonou */
+    var clock = document.getElementById('cotonouTime');
+    function tick(){
+      try{
+        clock.textContent = new Intl.DateTimeFormat('fr-FR', {hour:'2-digit', minute:'2-digit', timeZone:'Africa/Porto-Novo'}).format(new Date());
+      }catch(e){ clock.textContent = ''; }
+    }
+    if(clock){ tick(); setInterval(tick, 20000); }
   })();
 </script>
 </body>
